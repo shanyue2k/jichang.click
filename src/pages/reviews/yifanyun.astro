@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+	title="一翻云机场到底是不是大厂？一张节点入口拓扑图带你看清真相 | 老叶深度评测"
+	description="一翻云机场深度评测：抛开忽悠小白的测速图，老叶带你用硬核的节点拓扑分析（入口与落地机房）来看看一翻云到底是不是名副其实的老牌大厂。"
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/reviews" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回评测专栏</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">硬核拆解评测</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					老鸟专供：一翻云到底是不是大厂？一张入口与落地拓扑图带你看清真相
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span class="font-bold text-slate-700">✍️ 老叶原创</span>
+					<span>•</span>
+					<span>硬核分析系列</span>
+					<span>•</span>
+					<span>最后更新：2026年</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<h2>前言：测速图忽悠小白，拓扑图震慑老鸟</h2>
+				<p>每次老叶推**一翻云**，总有小白拿着那种满屏绿色的测速图跑来问：“老叶，某某新开的野鸡机场测速图跟你推的一翻云一样好看，价格还便宜一半，一翻云是不是在收智商税？”</p>
+				<p>老叶今天教你们一个硬核知识：<strong>那种花花绿绿的测速图，只要老板肯花几百块钱租个大带宽的廉价服务器，谁都能刷出来。</strong>那只能证明这辆车“能开多快”，不能证明这辆车的“底盘和发动机”有多好。</p>
+				<p>要想验证一个机场是不是真正的实力大厂、是不是用高端专线而不是公网中转来忽悠人，你得看它的**节点拓扑（入口和落地机房）**。这就好比汽车的发动机拆解图，底裤全给你扒光了。</p>
+
+				<h2>硬核拆解：一翻云的底层线路分析</h2>
+				<p>下面是老叶用专业探测机器人（Impart 测速）对一翻云节点进行的深度抓包分析截图。老鸟们，自己看数据：</p>
+
+				<figure class="my-8">
+					<img src="/images/yifanyun-topology.png" alt="一翻云节点入口出口拓扑图分析" class="rounded-xl shadow-md border border-slate-200" />
+					<figcaption class="text-center text-sm text-slate-500 mt-2">图 1：一翻云节点真实入口与出口落地机房分析</figcaption>
+				</figure>
+
+				<div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5 my-6">
+					<h4 class="text-emerald-800 font-bold flex items-center gap-2 mt-0 mb-3">
+						<svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+						老叶的行家解密
+					</h4>
+					<ul class="text-emerald-900 text-sm space-y-2 mb-0">
+						<li><strong>看入口（国内起飞端）：</strong> 图中清晰标明 <code>上海，中国电信 (AS4812)</code>。这意味着一翻云不计成本地租用了上海电信的高级入口来接收您的流量，而不是拿些便宜的移动宽带来凑数。起步就领先了 90% 的小机场。</li>
+						<li><strong>看出口（国外落地点）：</strong> 这是最能体现财力的地方。看日本（JP）节点那几行，一翻云采用的是大名鼎鼎的 <strong>DODO K.K.</strong> 机房！懂行的老鸟都知道，这是一家极其昂贵、且对日本本土流媒体（Netflix、DMM、Abema）解锁极其完美的顶级本土原生机房。</li>
+						<li><strong>专线验证：</strong> 通过上海入口和这些高级出口机房的点对点映射，实锤了这是一条高质量的跨境专线。</li>
+					</ul>
+				</div>
+
+				<h2>结论：贵一点，但稳得多</h2>
+				<p>现在你应该明白了，一翻云为什么敢在这个卷上天的市场里保持着“老牌大厂”的身段。</p>
+				<p>几十块钱的野鸡机场，今天能跑满带宽，明天可能就被墙得渣都不剩，老板卷款跑路。而一翻云这种真金白银去砸高级入口和 <strong>DODO K.K.</strong> 等顶级落地机房的大厂，赚的是细水长流的钱，稳定性是小作坊根本无法企及的。</p>
+
+				<div class="bg-slate-100 rounded-2xl p-6 my-10 text-center border border-slate-200">
+					<h3 class="text-xl font-bold text-slate-900 mt-0 mb-3">🛡️ 购买建议：追求极致稳定，买它</h3>
+					<p class="text-sm text-slate-600 mb-6">
+						如果你是一个对网络稳定性要求极高、厌倦了三天两头换机场的老玩家，或者你是重度的日本流媒体追剧狂魔，一翻云绝对是你的不二之选。<br/>
+						听老叶一句劝，好东西除了贵点，没别的毛病。
+					</p>
+					
+					<a href="https://wzjc.1flyunaff.cc/#/register?code=glcBWFxs" target="_blank" rel="nofollow sponsored" class="inline-flex flex-col items-center justify-center rounded-xl bg-emerald-600 px-8 py-4 font-bold text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 transition-all hover:-translate-y-1 text-decoration-none">
+						<span class="text-lg">前往一翻云官方购买</span>
+						<span class="text-xs text-emerald-100 font-normal mt-1">认准正规渠道，警惕假冒钓鱼网站</span>
+					</a>
+				</div>
+				
+			</article>
+		</section>
+	</main>
+</Layout>

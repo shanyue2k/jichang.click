@@ -1,0 +1,570 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="机场推荐 2026 - 高性价比/稳定/便宜/专线精选排行榜 - 机场点击"
+	description="机场点击 (jichang.click) 是专注机场推荐的中文测评站:2026 机场排行榜、高性价比机场推荐、稳定机场推荐、便宜机场推荐、专线机场推荐,告别虚假测速,帮你快速选到靠谱的原生解锁机场。"
+>
+	<main class="flex-1">
+		<!-- Hero Section -->
+		<section class="relative overflow-hidden bg-gradient-to-b from-blue-50/70 via-slate-50 to-slate-50 min-h-[85vh] flex items-center">
+			
+			<!-- 背景装饰 -->
+			<div class="pointer-events-none absolute -top-32 left-1/2 h-96 w-[48rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-emerald-200/40 to-teal-500/10 blur-3xl" aria-hidden="true"></div>
+			
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16">
+				<div class="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+					
+					<!-- 左侧文案 -->
+					<div class="pr-8">
+						<span class="inline-flex items-center rounded-full bg-emerald-50/80 px-3 py-1 text-sm font-semibold text-emerald-700 shadow-sm ring-1 ring-inset ring-emerald-500/20 backdrop-blur-sm">
+							<span class="mr-1.5 flex h-2 w-2">
+								<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-emerald-500 opacity-75"></span>
+								<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+							</span>
+							2026 年持续实测更新
+						</span>
+						
+						<h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-6xl">
+							2026 机场推荐
+							<span class="mt-2 block bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent leading-normal pb-2">
+								高性价比 · 稳定 · 便宜 · 专线精选排行榜
+							</span>
+						</h1>
+						
+						<p class="mt-6 max-w-xl text-base leading-loose text-slate-600 sm:text-lg">
+							告别虚假测速与无脑吹捧。基于真实晚高峰环境，深度横评全网高性价比专线。为你彻底解决流媒体与 AI 工具的网络封锁难题。
+						</p>
+						
+						<div class="mt-8 flex flex-wrap gap-4">
+							<a href="#top-1" class="rounded-xl bg-emerald-500 px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500 transition-all hover:-translate-y-0.5">
+								查看机场排行榜
+							</a>
+							<a href="#compare" class="rounded-xl bg-white px-6 py-3.5 text-base font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 hover:bg-slate-50 transition-all hover:-translate-y-0.5">
+								横向对比
+							</a>
+						</div>
+					</div>
+
+					<!-- 右侧 Bento Grid 结构 (替换原有的垂直列表) -->
+					<div class="grid grid-cols-2 gap-4">
+						
+						<!-- 主卡片：专属优惠码 -->
+						<a href="/coupons/" class="col-span-2 group relative overflow-hidden rounded-3xl bg-white p-8 shadow-xl shadow-slate-200/50 ring-1 ring-slate-900/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-200/50">
+							<div class="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-gradient-to-br from-amber-50 to-amber-100/50 transition-transform duration-500 group-hover:scale-150"></div>
+							<div class="relative z-10 flex items-start justify-between">
+								<div>
+									<div class="flex items-center gap-2">
+										<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-white shadow-sm">
+											<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+											</svg>
+										</div>
+										<h2 class="text-xl font-bold text-slate-900">闪跃专属 8 折 与各大优惠券！</h2>
+									</div>
+									<p class="mt-4 text-sm font-medium text-slate-500">各大顶级机场限时大额优惠码汇总，点击查看详细兑换教程。</p>
+								</div>
+								<span class="inline-flex items-center gap-1.5 rounded-full bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700 ring-1 ring-inset ring-amber-600/20">
+									<span class="relative flex h-1.5 w-1.5">
+										<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75"></span>
+										<span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+									</span>
+									限时特惠
+								</span>
+							</div>
+						</a>
+
+						<!-- 副卡片 1：新手配置 -->
+						<a href="/tutorial/clash-shadowrocket-setup/" class="col-span-1 group relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 to-slate-800 p-6 shadow-xl ring-1 ring-slate-900/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/20">
+							<div class="relative z-10">
+								<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white backdrop-blur-sm">
+									<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+									</svg>
+								</div>
+								<h2 class="mt-4 text-base font-bold text-white group-hover:text-blue-400 transition-colors">新手 3 分钟配置</h2>
+								<p class="mt-2 text-xs text-slate-400">Clash / 小火箭保姆级图文教程。</p>
+							</div>
+						</a>
+
+						<!-- 副卡片 2：流媒体与 AI -->
+						<a href="/tutorial/streaming-unlock-guide-2026/" class="col-span-1 group relative overflow-hidden rounded-3xl bg-white p-6 shadow-xl ring-1 ring-slate-900/5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-200/50">
+							<div class="absolute inset-0 bg-gradient-to-br from-indigo-50/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+							<div class="relative z-10">
+								<div class="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-100 text-indigo-600">
+									<svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+										<path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+									</svg>
+								</div>
+								<h2 class="mt-4 text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Netflix & AI 解锁</h2>
+								<p class="mt-2 text-xs text-slate-500">2026 原生 IP 实测，秒开 4K 无压力。</p>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 行业动态跑马灯 (SEO 活跃度引擎) -->
+		<div class="border-y border-slate-200 bg-slate-50/80 backdrop-blur-sm overflow-hidden py-3">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+				<div class="flex-shrink-0 flex items-center gap-2 pr-4 border-r border-slate-300">
+					<span class="relative flex h-3 w-3">
+					  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+					  <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+					</span>
+					<span class="text-sm font-bold text-slate-800">最新情报</span>
+				</div>
+				<div class="ml-4 flex-1 overflow-hidden relative">
+					<!-- CSS Marquee Animation -->
+					<div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused]">
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月8日：</span>闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
+						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月7日：</span>一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
+						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月5日：</span>跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
+						
+						<!-- Duplicate for infinite scroll illusion -->
+						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月8日：</span>闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
+						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月7日：</span>一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
+						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月5日：</span>跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 机场排行榜专区 -->
+		<section id="rankings" class="py-24 bg-white relative scroll-mt-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center max-w-3xl mx-auto mb-10">
+					<h2 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">2026 年度机场排行榜 (持续更新)</h2>
+					<p class="mt-4 text-lg text-slate-600">老叶自费购买、亲自测速。只推荐晚高峰不卡顿、流媒体真解锁的良心机场，不接野鸡机场恰饭广告。</p>
+				</div>
+
+				<!-- 分类筛选导航 (SEO 占位) -->
+				<div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+					<button class="rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition-all">🔥 综合 Top 精选</button>
+					<button class="rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-all">👑 IPLC 顶级专线</button>
+					<button class="rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-all">💎 IEPL 稳定专线</button>
+					<button class="rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-all">💰 便宜高性价比</button>
+					<button class="rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-slate-50 hover:text-slate-900 transition-all">⏳ 按量不限时包</button>
+				</div>
+
+				<div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10 items-start max-w-6xl mx-auto">
+					
+					<!-- 左侧：机场卡片列表 -->
+					<div class="space-y-6">
+					
+					<!-- Top 1: 闪跃机场 -->
+					<div id="top-1" class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8 shadow-xl shadow-amber-100/50 ring-2 ring-amber-400 transition-all hover:shadow-2xl hover:shadow-amber-200/50 scroll-mt-24">
+						<!-- 皇冠角标 -->
+						<div class="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-amber-100/50 group-hover:scale-150 transition-transform duration-700"></div>
+						<div class="absolute right-0 top-0 rounded-bl-3xl bg-amber-500 px-6 py-2 text-sm font-bold text-white shadow-md">
+							👑 Top 1 强烈推荐
+						</div>
+						
+						<div class="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto]">
+							<div>
+								<div class="flex items-center gap-4">
+									<h3 class="text-3xl font-black text-slate-900 tracking-tight">闪跃</h3>
+									<span class="rounded-md bg-amber-100 px-2 py-1 text-xs font-semibold text-amber-800">全网性价比之王</span>
+								</div>
+								
+								<div class="mt-4 flex flex-wrap gap-2">
+									<span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">⚡ IPLC 专线</span>
+									<span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">🎬 Netflix/ChatGPT 原生解锁</span>
+									<span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">晚高峰秒开 4K</span>
+								</div>
+								
+								<!-- 评分与优缺点 -->
+								<div class="mt-6">
+									<div class="flex items-center gap-4 text-xs font-bold text-slate-700 mb-3">
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>速度: 9.8</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>稳定: 9.9</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>性价比: 10.0</span>
+									</div>
+									<div class="grid sm:grid-cols-2 gap-3 text-sm">
+										<div class="rounded-lg bg-emerald-50 p-3 border border-emerald-100">
+											<h4 class="font-bold text-emerald-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>优点</h4>
+											<ul class="text-emerald-700 space-y-1 text-xs">
+												<li>• 价格极低，性价比属于全网降维打击</li>
+												<li>• IPLC 高端专线，晚高峰 4K 拖拽不卡</li>
+											</ul>
+										</div>
+										<div class="rounded-lg bg-rose-50 p-3 border border-rose-100">
+											<h4 class="font-bold text-rose-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>缺点</h4>
+											<ul class="text-rose-700 space-y-1 text-xs">
+												<li>• 新晋热门机场，近期涌入用户较多</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								
+								<!-- 实测图展示 -->
+								<details class="mt-4 group/details">
+									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 hover:text-emerald-500 select-none">
+										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+										📸 点击查看：老叶晚高峰 4K 实测铁证
+									</summary>
+									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
+										<img src="/images/shanyue-speedtest1.png" alt="闪跃机场晚高峰测速截图 1" class="w-full h-auto rounded-lg object-cover" />
+										<img src="/images/shanyue-speedtest2.png" alt="闪跃机场晚高峰测速截图 2" class="w-full h-auto rounded-lg object-cover" />
+									</div>
+								</details>
+							</div>
+							
+							<div class="flex flex-col items-start sm:items-end justify-center border-t border-slate-100 pt-6 sm:border-t-0 sm:border-l sm:pl-6 sm:pt-0">
+								<div class="text-sm text-slate-500 line-through">原价 ¥24/月</div>
+								<div class="flex items-baseline gap-1">
+									<span class="text-3xl font-extrabold text-red-600">¥19.20</span>
+									<span class="text-sm font-medium text-slate-500">/月起</span>
+								</div>
+								<div class="mt-1 text-xs font-semibold text-amber-600">使用优惠码: shanyue</div>
+								
+								<div class="mt-4 flex flex-col gap-1.5 w-full">
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>闪动</span><span>¥19.2</span></span>
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>飞跃</span><span>¥35.2</span></span>
+								</div>
+
+								<a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" target="_blank" rel="nofollow sponsored" class="mt-4 w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+									前往官网购买
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Top 2: 一翻云 -->
+					<div id="top-2" class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8 shadow-md ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-slate-300 scroll-mt-24">
+						<div class="absolute right-0 top-0 rounded-bl-3xl bg-slate-300 px-6 py-2 text-sm font-bold text-slate-700 shadow-sm">
+							🥈 Top 2 备用老牌
+						</div>
+						
+						<div class="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto]">
+							<div>
+								<div class="flex items-center gap-4">
+									<h3 class="text-2xl font-bold text-slate-900">一翻云</h3>
+									<span class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">老牌大厂</span>
+								</div>
+								
+								<div class="mt-4 flex flex-wrap gap-2">
+									<span class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">⚡ IEPL 专线</span>
+									<span class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">老牌稳定</span>
+									<span class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">节点覆盖全</span>
+								</div>
+								
+								<!-- 评分与优缺点 -->
+								<div class="mt-6">
+									<div class="flex items-center gap-4 text-xs font-bold text-slate-700 mb-3">
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>速度: 9.2</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>稳定: 9.8</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>性价比: 8.5</span>
+									</div>
+									<div class="grid sm:grid-cols-2 gap-3 text-sm">
+										<div class="rounded-lg bg-emerald-50 p-3 border border-emerald-100">
+											<h4 class="font-bold text-emerald-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>优点</h4>
+											<ul class="text-emerald-700 space-y-1 text-xs">
+												<li>• 老牌实力机场，极度稳定，基本不掉线</li>
+												<li>• 节点覆盖全球多个冷门地区</li>
+											</ul>
+										</div>
+										<div class="rounded-lg bg-rose-50 p-3 border border-rose-100">
+											<h4 class="font-bold text-rose-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>缺点</h4>
+											<ul class="text-rose-700 space-y-1 text-xs">
+												<li>• 价格稍贵</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								
+								<details class="mt-4 group/details">
+									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-slate-900 select-none border border-slate-300 rounded-md px-3 py-1.5 bg-white shadow-sm transition-colors">
+										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+										📸 点击查看：老鸟专属大厂节点拓扑图实锤
+									</summary>
+									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
+										<img src="/images/yifanyun-topology.png" alt="一翻云入口与落地机房拓扑图" class="w-full h-auto rounded-lg object-cover" />
+									</div>
+								</details>
+							</div>
+							
+							<div class="flex flex-col items-start sm:items-end justify-center border-t border-slate-100 pt-6 sm:border-t-0 sm:border-l sm:pl-6 sm:pt-0">
+								<div class="flex items-baseline gap-1">
+									<span class="text-2xl font-bold text-slate-900">¥25</span>
+									<span class="text-sm font-medium text-slate-500">/月起</span>
+								</div>
+								
+								<div class="mt-4 flex flex-col gap-1.5 w-full">
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>轻享版包月</span><span>¥25.0</span></span>
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>舒享版包月</span><span>¥35.0</span></span>
+								</div>
+
+								<a href="https://wzjc.1flyunaff.cc/#/register?code=glcBWFxs" target="_blank" rel="nofollow sponsored" class="mt-4 w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+									前往官网购买
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Top 3: 跨界云 -->
+					<div id="top-3" class="group relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8 shadow-md ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-slate-300 scroll-mt-24">
+						<div class="absolute right-0 top-0 rounded-bl-3xl bg-orange-200/50 px-6 py-2 text-sm font-bold text-orange-800 shadow-sm">
+							🥉 Top 3 应急过渡
+						</div>
+						
+						<div class="relative z-10 grid gap-6 sm:grid-cols-[1fr_auto]">
+							<div>
+								<div class="flex items-center gap-4">
+									<h3 class="text-2xl font-bold text-slate-900">跨界云</h3>
+								</div>
+								
+								<div class="mt-4 flex flex-wrap gap-2">
+									<span class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">⚡ IPLC 专线</span>
+									<span class="inline-flex items-center rounded-full bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600 border border-slate-200">轻度用户适用</span>
+								</div>
+								
+								<!-- 评分与优缺点 -->
+								<div class="mt-6">
+									<div class="flex items-center gap-4 text-xs font-bold text-slate-700 mb-3">
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>速度: 7.5</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>稳定: 8.0</span>
+										<span class="flex items-center gap-1"><svg class="w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>性价比: 9.9</span>
+									</div>
+									<div class="grid sm:grid-cols-2 gap-3 text-sm">
+										<div class="rounded-lg bg-emerald-50 p-3 border border-emerald-100">
+											<h4 class="font-bold text-emerald-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>优点</h4>
+											<ul class="text-emerald-700 space-y-1 text-xs">
+												<li>• 20块钱买 IPLC 专线，入门门槛极低</li>
+												<li>• 适合不看 4K，只查资料的轻度用户</li>
+											</ul>
+										</div>
+										<div class="rounded-lg bg-rose-50 p-3 border border-rose-100">
+											<h4 class="font-bold text-rose-800 mb-1 flex items-center gap-1"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>缺点</h4>
+											<ul class="text-rose-700 space-y-1 text-xs">
+												<li>• 带宽较小，晚高峰看超清视频会卡顿吃力</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<!-- 实测图展示 -->
+								<details class="mt-4 group/details">
+									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 hover:text-emerald-500 select-none">
+										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+										📸 点击查看：跨界云真实节点测速
+									</summary>
+									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
+										<img src="/images/kuajieyun-speedtest1.png" alt="跨界云测速截图 1" class="w-full h-auto rounded-lg object-cover" />
+										<img src="/images/kuajieyun-speedtest2.png" alt="跨界云测速截图 2" class="w-full h-auto rounded-lg object-cover" />
+									</div>
+								</details>
+							</div>
+							
+							<div class="flex flex-col items-start sm:items-end justify-center border-t border-slate-100 pt-6 sm:border-t-0 sm:border-l sm:pl-6 sm:pt-0">
+								<div class="flex items-baseline gap-1">
+									<span class="text-2xl font-bold text-slate-900">¥20</span>
+									<span class="text-sm font-medium text-slate-500">/月起</span>
+								</div>
+								
+								<div class="mt-4 flex flex-col gap-1.5 w-full">
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>轻云包月</span><span>¥20.0</span></span>
+									<span class="inline-flex justify-between rounded bg-slate-100 px-2 py-1 text-xs font-medium text-slate-600"><span>跃云包月</span><span>¥40.0</span></span>
+								</div>
+
+								<a href="https://koolykh88.kuajieaff.com/#/?code=UWUfGLwJ" target="_blank" rel="nofollow sponsored" class="mt-4 w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-emerald-500 px-8 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+									前往官网购买
+								</a>
+							</div>
+						</div>
+					</div>
+
+					</div>
+
+					<!-- 右侧：电梯导航侧边栏 -->
+					<div class="hidden lg:block sticky top-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 class="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
+							<svg class="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"/></svg>
+							快捷电梯导航
+						</h3>
+						<nav class="space-y-3">
+							<a href="#top-1" class="block text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">🏆 Top 1: 闪跃</a>
+							<a href="#top-2" class="block text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">🥈 Top 2: 一翻云</a>
+							<a href="#top-3" class="block text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">🥉 Top 3: 跨界云</a>
+							<div class="pt-4 mt-4 border-t border-slate-100">
+								<a href="#faq" class="block text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">❓ 老叶防骗指南</a>
+							</div>
+						</nav>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 横向对比表格 -->
+		<section id="compare" class="py-24 bg-white scroll-mt-10">
+			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-extrabold text-slate-900">三大核心机场参数横向对比</h2>
+					<p class="mt-4 text-lg text-slate-600">选择困难症？一张表帮您看清各家底牌，对号入座。</p>
+				</div>
+				
+				<div class="overflow-x-auto rounded-3xl ring-1 ring-slate-200 shadow-xl shadow-slate-200/50">
+					<table class="w-full text-left text-sm text-slate-600 min-w-[800px]">
+						<thead class="bg-slate-50 text-slate-900 font-bold border-b border-slate-200">
+							<tr>
+								<th class="p-6 w-1/4">对比维度</th>
+								<th class="p-6 w-1/4 bg-emerald-50/50 text-emerald-900 border-x border-slate-200">🏆 闪跃 (全网性价比之王)</th>
+								<th class="p-6 w-1/4">🥈 一翻云 (老鸟备用大厂)</th>
+								<th class="p-6 w-1/4">🥉 跨界云 (应急轻度首选)</th>
+							</tr>
+						</thead>
+						<tbody class="divide-y divide-slate-200 bg-white">
+							<tr class="hover:bg-slate-50 transition-colors">
+								<td class="p-6 font-semibold text-slate-900">底层线路</td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100 font-bold text-emerald-700">顶级 IPLC 纯内网专线</td>
+								<td class="p-6">高端 IEPL 跨境专线</td>
+								<td class="p-6">入门级 IPLC 专线</td>
+							</tr>
+							<tr class="hover:bg-slate-50 transition-colors">
+								<td class="p-6 font-semibold text-slate-900">晚高峰 4K 表现</td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100 font-bold text-emerald-700">🚀 丝滑拖拽，秒开缓冲</td>
+								<td class="p-6 text-slate-800">🚀 极其稳定，不降速</td>
+								<td class="p-6 text-orange-600">⚠️ 勉强能看，偶有卡顿</td>
+							</tr>
+							<tr class="hover:bg-slate-50 transition-colors">
+								<td class="p-6 font-semibold text-slate-900">流媒体与 AI 解锁</td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100">Netflix / ChatGPT 全绿原生解锁</td>
+								<td class="p-6">日本流媒体 (DMM等) 解锁完美</td>
+								<td class="p-6">基础解锁</td>
+							</tr>
+							<tr class="hover:bg-slate-50 transition-colors">
+								<td class="p-6 font-semibold text-slate-900">价格门槛</td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100 font-bold text-red-600 text-lg">￥19.20 /月<span class="text-xs text-slate-400 block font-normal">(用码后)</span></td>
+								<td class="p-6 font-bold text-slate-900 text-lg">￥25.00 /月<span class="text-xs text-slate-400 block font-normal">(轻享版)</span></td>
+								<td class="p-6 font-bold text-slate-900 text-lg">￥20.00 /月<span class="text-xs text-slate-400 block font-normal">(轻云版)</span></td>
+							</tr>
+							<tr class="hover:bg-slate-50 transition-colors">
+								<td class="p-6 font-semibold text-slate-900">老叶最推荐的人群</td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100"><strong class="text-emerald-800 block mb-1">90% 用户的闭眼首选。</strong>适合看超清视频、打游戏、重度翻墙的主力用户。</td>
+								<td class="p-6"><strong class="text-slate-900 block mb-1">追求极致稳定不差钱的老鸟。</strong>适合极其讨厌节点掉线、主刷日本片源的用户。</td>
+								<td class="p-6"><strong class="text-slate-900 block mb-1">预算有限的学生党/轻度用户。</strong>适合偶尔查个资料、刷刷推特，当做备用机场。</td>
+							</tr>
+							<tr class="bg-slate-50/50">
+								<td class="p-6 font-semibold text-slate-900">一句话总结</td>
+								<td class="p-6 bg-emerald-50 border-x border-emerald-100 text-emerald-800 font-bold text-center">“闭眼买，综合体验打爆全网”</td>
+								<td class="p-6 text-slate-700 font-bold text-center">“贵一点，但底盘稳得可怕”</td>
+								<td class="p-6 text-slate-700 font-bold text-center">“便宜能用，别奢求晚高峰起飞”</td>
+							</tr>
+							<tr>
+								<td class="p-6"></td>
+								<td class="p-6 bg-emerald-50/30 border-x border-slate-100 text-center">
+									<a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" target="_blank" rel="nofollow sponsored" class="inline-block w-full rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-md hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+										直达官网购买
+									</a>
+								</td>
+								<td class="p-6 text-center">
+									<a href="https://wzjc.1flyunaff.cc/#/register?code=glcBWFxs" target="_blank" rel="nofollow sponsored" class="inline-block w-full rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-md hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+										直达官网购买
+									</a>
+								</td>
+								<td class="p-6 text-center">
+									<a href="https://koolykh88.kuajieaff.com/#/?code=UWUfGLwJ" target="_blank" rel="nofollow sponsored" class="inline-block w-full rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-bold text-white shadow-md hover:bg-emerald-400 transition-all hover:-translate-y-0.5">
+										直达官网购买
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<!-- FAQ 防骗指南 (SEO 长尾词引擎) -->
+		<section id="faq" class="py-24 bg-slate-50 border-t border-slate-200 scroll-mt-10">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-extrabold text-slate-900">老叶防骗指南：小白必看的 4 个真相</h2>
+					<p class="mt-4 text-lg text-slate-600">别被无良机场主忽悠了，买前先看这篇避坑 FAQ，不花一分冤枉钱。</p>
+				</div>
+				
+				<div class="space-y-4">
+					<!-- FAQ Item 1 -->
+					<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
+						<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600">
+							<span>1. IPLC 和 IEPL 专线到底有什么区别？普通中转能买吗？</span>
+							<span class="transition group-open:rotate-180 text-emerald-500">
+								<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+							</span>
+						</summary>
+						<div class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+							<p><strong>千万别买纯直连或廉价中转！</strong> 到了晚高峰（晚上 8 点到 11 点）不仅速度慢如蜗牛，还极容易被墙阻断，疯狂转圈。</p>
+							<p class="mt-2"><strong>IPLC (国际私用出租线路)</strong> 是两点一线的纯正内网专线，数据不过 GFW（防火长城），因此<strong>绝对不会被墙，延迟极低且完全不丢包</strong>，是打游戏和看 4K 的最顶级选择（如榜首的闪跃机场）。</p>
+							<p class="mt-2"><strong>IEPL (国际以太网专线)</strong> 原理类似，也是二层物理专线，稳定性与 IPLC 旗鼓相当。对普通用户而言，只要认准这两个词闭眼买，体验绝对差不了。</p>
+						</div>
+					</details>
+
+					<!-- FAQ Item 2 -->
+					<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
+						<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600">
+							<span>2. 为什么有些机场刚买就跑路？如何避开“杀猪盘”？</span>
+							<span class="transition group-open:rotate-180 text-emerald-500">
+								<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+							</span>
+						</summary>
+						<div class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+							<p>机场圈水很深，很多新开的野鸡机场会用“1元 1000G”的超低价噱头吸引贪便宜的小白，收割几个月甚至几周后就直接跑路。</p>
+							<p class="mt-2"><strong>老叶避坑法则：</strong></p>
+							<ul class="list-disc pl-5 mt-1 space-y-1">
+								<li>不要贪图违反商业常理的低价。专线带宽成本极高，真正的 IPLC 不可能卖出白菜价。</li>
+								<li>新出炉、没人背书的机场不要买。</li>
+								<li>认准本站推荐的老牌或实力大厂（如一翻云、闪跃）。老叶自费实测，随时把跑路风险扼杀在摇篮里。</li>
+							</ul>
+						</div>
+					</details>
+
+					<!-- FAQ Item 3 -->
+					<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
+						<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600">
+							<span>3. 应该选择月付还是年付？按量不限时套餐划算吗？</span>
+							<span class="transition group-open:rotate-180 text-emerald-500">
+								<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+							</span>
+						</summary>
+						<div class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+							<p><strong>初次购买绝对推荐【月付】！</strong> 即使是老叶强推的榜首机场，也建议您先买一个月体验。不同地区的宽带运营商（电信/联通/移动）对节点的兼容性有微妙差异，自己实测好用，再转为年付享受 8 折或 9 折优惠。</p>
+							<p class="mt-2"><strong>关于按量不限时套餐：</strong> 如果您只是偶尔查查资料、用用 ChatGPT，极度推荐购买【不限时包】。虽然单价可能稍贵，但只要你不把流量用完，这套餐就永远不过期，长期来看最省钱（闪跃和跨界云均提供此类套餐）。</p>
+						</div>
+					</details>
+
+					<!-- FAQ Item 4 -->
+					<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
+						<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600">
+							<span>4. 什么是 Netflix / Disney+ “原生解锁”？</span>
+							<span class="transition group-open:rotate-180 text-emerald-500">
+								<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+							</span>
+						</summary>
+						<div class="mt-4 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+							<p>Netflix、Disney+ 以及 ChatGPT 等海外服务，对中国大陆及部分机房 IP 有严格的封锁（甚至很多香港 IP 也会被识别并封禁）。</p>
+							<p class="mt-2"><strong>原生解锁</strong>指的是机场主通过技术手段，获取了干净的当地住宅 IP 或未被污染的冷门机房 IP。使用这种节点，您可以直接观看带有该地区独家版权的影视剧（如美区独占电影、台区动画疯），且不会遇到 ChatGPT 的“Access Denied”报错。</p>
+							<p class="mt-2">排行榜中的机场均通过了老叶的晚高峰解锁流媒体实测，可放心食用。</p>
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+
+	</main>
+</Layout>
+
+<style>
+	@keyframes marquee {
+		0% { transform: translateX(0%); }
+		100% { transform: translateX(-50%); }
+	}
+</style>

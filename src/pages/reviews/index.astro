@@ -1,0 +1,113 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+	title="单品深度评测 - 机场测速与跑路预警 | 老叶实测"
+	description="不吹不黑，老叶自费购买机场，为您带来最真实的晚高峰测速、Netflix解锁测试以及跑路风险评估。拒绝软文，只说真话。"
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-5xl">
+					老叶深度评测室
+				</h1>
+				<p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+					自费购买，晚高峰挂机实测。是真专线还是杀猪盘？在这里，老叶只用数据说话。
+				</p>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+				
+				<!-- Shanyue Review Card -->
+				<a href="/reviews/shanyue" class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-amber-500">
+					<div class="aspect-[16/9] bg-slate-100 relative overflow-hidden">
+						<!-- 使用首页已有的闪跃测速图作为封面图 -->
+						<img src="/images/shanyue-speedtest1.png" alt="闪跃机场测速" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+						<div class="absolute bottom-4 left-4 flex gap-2">
+							<span class="rounded bg-amber-500 px-2 py-1 text-xs font-bold text-white shadow-sm">IPLC专线</span>
+							<span class="rounded bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">深度评测</span>
+						</div>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<h2 class="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+							闪跃机场怎么样？跑路了吗？2026 最新晚高峰实测与 IPLC 专线评测
+						</h2>
+						<p class="mt-3 text-sm text-slate-600 line-clamp-3 flex-1">
+							十几块钱买纯正 IPLC 专线，到底是杀猪盘还是真慈善？老叶连续挂机一个月，带你揭秘晚高峰 4K 拖拽秒开的真相。
+						</p>
+						<div class="mt-4 flex items-center gap-3 text-xs font-medium text-slate-500">
+							<span>🔥 强推</span>
+							<span>•</span>
+							<span>老叶原创</span>
+							<span>•</span>
+							<span>最近更新</span>
+						</div>
+					</div>
+				</a>
+
+				<!-- Placeholder for future reviews -->
+				<!-- Yifanyun Review Card -->
+				<a href="/reviews/yifanyun" class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-emerald-500">
+					<div class="aspect-[16/9] bg-slate-800 relative overflow-hidden flex items-center justify-center">
+						<img src="/images/yifanyun-topology.png" alt="一翻云入口与落地机房拓扑图" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+						<div class="absolute bottom-4 left-4 flex gap-2">
+							<span class="rounded bg-emerald-500 px-2 py-1 text-xs font-bold text-white shadow-sm">节点拓扑分析</span>
+							<span class="rounded bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">硬核拆解</span>
+						</div>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<h2 class="text-xl font-bold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-2">
+							老鸟专供：一翻云到底是不是大厂？一张入口与落地拓扑图带你看清真相
+						</h2>
+						<p class="mt-3 text-sm text-slate-600 line-clamp-3 flex-1">
+							别看全绿的测速图，看底层架构！一翻云日本节点采用昂贵 DODO K.K. 顶级机房，上海电信优质入口直连，大厂实力实锤。
+						</p>
+						<div class="mt-4 flex items-center gap-3 text-xs font-medium text-slate-500">
+							<span>🥈 备用老牌</span>
+							<span>•</span>
+							<span>老叶原创</span>
+							<span>•</span>
+							<span>硬核干货</span>
+						</div>
+					</div>
+				</a>
+
+				<!-- Kuajieyun Review Card -->
+				<a href="/reviews/kuajieyun" class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-xl hover:ring-orange-500">
+					<div class="aspect-[16/9] bg-slate-100 relative overflow-hidden">
+						<!-- 跨界云测速图 -->
+						<img src="/images/kuajieyun-speedtest1.png" alt="跨界云机场测速" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+						<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+						<div class="absolute bottom-4 left-4 flex gap-2">
+							<span class="rounded bg-orange-500 px-2 py-1 text-xs font-bold text-white shadow-sm">入门级IPLC</span>
+							<span class="rounded bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">深度评测</span>
+						</div>
+					</div>
+					<div class="flex flex-1 flex-col p-6">
+						<h2 class="text-xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors line-clamp-2">
+							跨界云机场怎么样？20块钱买 IPLC 专线是交智商税吗？老叶实测
+						</h2>
+						<p class="mt-3 text-sm text-slate-600 line-clamp-3 flex-1">
+							打着极简口号的跨界云，门槛极低，到底好不好用？老叶带你看它的真实水平，不吹不黑，只适合一类人。
+						</p>
+						<div class="mt-4 flex items-center gap-3 text-xs font-medium text-slate-500">
+							<span>🥉 备用</span>
+							<span>•</span>
+							<span>老叶原创</span>
+							<span>•</span>
+							<span>最近更新</span>
+						</div>
+					</div>
+				</a>
+
+			</div>
+		</section>
+	</main>
+</Layout>

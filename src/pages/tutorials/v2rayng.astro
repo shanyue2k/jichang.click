@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+---
+
+<Layout 
+	title="v2rayNG 极简教程：安卓手机科学上网指南"
+	description="安卓手机怎么挂机场？老叶教你用 v2rayNG，长得丑但稳如老狗，一键导入机场节点，懒人必备的科学上网神器。"
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/tutorials" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回教程中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">Android / 安卓专属教程</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+					v2rayNG 极简教程：安卓用户的最终归宿
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span>作者：老叶</span>
+					<span>•</span>
+					<span>最近更新：2026年</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<p class="lead font-bold text-slate-700 bg-slate-100 p-4 rounded-xl border-l-4 border-slate-300">
+					看完这篇教程，如果你还没买机场，或者正被手里那个晚高峰卡成狗的野鸡机场折磨，别废话，直接看老叶下面这个实测出来的专线榜单。买这三个，按照教程无脑导入，保你顺畅出海。
+				</p>
+
+				<AffiliateCTA />
+
+				<h2>前言：安卓阵营的懒人福音</h2>
+				<p>安卓手机的生态比较杂。如果你是个喜欢折腾高级分流规则的技术宅，你可以去研究 Clash Meta for Android。</p>
+				<p>但如果你跟老叶一样是个嫌麻烦的懒人，只想赶紧连上网络刷个推特看个片，那就用 <strong>v2rayNG</strong>。这软件长得丑，没有任何花里胡哨的界面，但是它贵在**稳**，属于导入就能用，小白绝对不会搞砸的类型。</p>
+
+				<h2>第一步：去哪下载这个“V字软件”？</h2>
+				<p>同样的规矩，别用百度搜下载包，否则你的手机会被各种乱七八糟的流氓软件塞满。</p>
+				<ul>
+					<li>去 GitHub 搜索 <code>v2rayNG</code>，在 Releases 页面下载后缀为 <code>.apk</code> 的安装包。普通手机下载 <code>arm64-v8a.apk</code> 这个版本即可。</li>
+					<li>如果你打不开 GitHub 页面，直接去你买机场的后台，老叶推的这几家（像闪跃、一翻云）后台的“客户端下载”或者“使用文档”里，绝对有提供现成的 v2rayNG 安装包，点进去直接下。</li>
+				</ul>
+
+				<h2>第二步：导入订阅链接，三秒搞定</h2>
+				<p>买好机场套餐后，进入机场网站的用户中心。</p>
+				<ol>
+					<li>找到 <strong>“复制 v2ray 订阅链接”</strong>（注意，千万别点成 Clash 链接，协议不互通！如果你实在分不清，就找带“通用订阅”或者“V2ray”字样的按钮）。</li>
+					<li>打开你手机上刚装好的 v2rayNG。</li>
+					<li>点击右上角的 <strong>“+”</strong> 号。</li>
+					<li>在弹出的菜单里选择 <strong>“从剪贴板导入订阅”</strong>。</li>
+				</ol>
+
+				<h2>第三步：小白必看，为什么屏幕是空的？</h2>
+				<p>很多小白做完第二步，看着空空如也的屏幕陷入沉思：“老叶，怎么什么都没发生？”</p>
+				<p>因为你还没刷新！</p>
+				<ol>
+					<li>点击软件右上角的三个小圆点（菜单）。</li>
+					<li>选择 <strong>“更新订阅”</strong>。</li>
+					<li>唰的一下，所有国家的节点就全冒出来了。</li>
+				</ol>
+
+				<h2>第四步：起飞</h2>
+				<p>在节点列表里随便挑一个。如果你不知道选哪个，就点右上角的三个点，选“测试全部配置 TCP Ping”，选一个数值小、颜色变绿的香港或日本节点点一下（选中的节点左侧会有个竖条标记）。</p>
+				<p>最后，点击右下角那个大大的 <strong>“V”字形圆圈图标</strong>。系统会弹出一个网络连接请求，问你是否允许建立 VPN，点击“允许”。</p>
+				<p>当屏幕上方的状态栏出现钥匙图标或者 VPN 字母时，你就可以尽情网上冲浪了！</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<p class="font-bold text-slate-800 text-lg mb-4">搞定客户端了，手里没好线路怎么行？</p>
+				<p>现在你的客户端已经配置好了，手里那台法拉利就缺好油了。千万别去网上找什么‘免费公益节点’，那就是拿你的隐私去裸奔。</p>
+				<p>一步到位，直接选 <strong>闪跃 (IPLC 顶级专线)</strong> 或者 <strong>一翻云 (老牌大厂)</strong>，把订阅链接往里一贴，开启新世界的大门。</p>
+
+				<AffiliateCTA />
+				
+			</article>
+		</section>
+	</main>
+</Layout>

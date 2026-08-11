@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+---
+
+<Layout 
+	title="Clash Verge 使用教程：Windows/Mac 电脑端的最佳选择"
+	description="电脑端怎么挂梯子？Clash for Windows 跑路后，老叶手把手教你配置最新的 Clash Verge Rev，智能分流不卡顿。"
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/tutorials" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回教程中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">Windows / Mac 专属教程</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl">
+					Clash Verge 使用教程：Windows/Mac 电脑端的最佳选择
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span>作者：老叶</span>
+					<span>•</span>
+					<span>最近更新：2026年</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<p class="lead font-bold text-slate-700 bg-slate-100 p-4 rounded-xl border-l-4 border-slate-300">
+					看完这篇教程，如果你还没买机场，或者正被手里那个晚高峰卡成狗的野鸡机场折磨，别废话，直接看老叶下面这个实测出来的专线榜单。买这三个，按照教程无脑导入，保你顺畅出海。
+				</p>
+
+				<AffiliateCTA />
+
+				<h2>前言：别再找 Clash for Windows 了</h2>
+				<p>以前大家都用那只“蓝猫”（Clash for Windows），但后来作者删库跑路了。现在的软件生态已经翻篇了，电脑端公认最稳、最好用的替代品，叫 <strong>Clash Verge (现在的版本叫 Clash Verge Rev)</strong>。</p>
+				<p>别去瞎折腾那些老古董软件了，听老叶的，直接上这个，界面漂亮而且自带中文。</p>
+
+				<h2>第一步：下载并安装 Clash Verge Rev</h2>
+				<p><strong>千万别去百度搜下载地址！</strong> 百度搜出来的那些打着“官方中文版”旗号的网站，全都是带木马的冒牌货。开源软件唯一的指定下载渠道是 GitHub。</p>
+				<ul>
+					<li>如果你打得开 GitHub，直接搜 <code>clash-verge-rev</code>，去 Releases 页面下载。Windows 下载 <code>.exe</code> 结尾的安装包，Mac 下载 <code>.dmg</code>。</li>
+					<li><strong>如果你打不开 GitHub，说明你还没买机场，连最基本的网络环境都没有。</strong>去上面老叶给的榜单里随便买一个（比如闪跃），机场后台通常会直接提供客户端下载地址。</li>
+				</ul>
+				<p>下载后双击安装，一直点“下一步”搞定。</p>
+
+				<h2>第二步：导入机场订阅</h2>
+				<p>软件装好了，现在我们需要把节点“喂”给它。</p>
+				<ol>
+					<li>打开你买好的机场后台（比如 <a href="https://wzjc.1flyunaff.cc/#/register?code=glcBWFxs" target="_blank" rel="nofollow">一翻云</a>），找到 <strong>“一键导入 Clash”</strong> 或者 <strong>“复制 Clash 订阅链接”</strong>。</li>
+					<li>如果是一键导入，浏览器会提示你打开 Clash Verge，点同意即可。</li>
+					<li>如果是复制链接，打开 Clash Verge，点击左侧导航栏的 <strong>“订阅 (Profiles)”</strong>。</li>
+					<li>把刚刚复制的链接粘贴进顶部的输入框，点击 <strong>“导入 (Import)”</strong>。</li>
+					<li>看到下面多出来一条配置后，<strong>右键点击它，选择“使用 (Use)”</strong>。</li>
+				</ol>
+
+				<h2>第三步：老叶避坑提醒，这一步最重要！</h2>
+				<p>很多小白导完节点，急吼吼地打开代理开关，结果发现国内网站打不开了，微信发不出消息。这就是因为没选对模式。</p>
+				
+				<h3>正确的分流姿势：</h3>
+				<ul>
+					<li>点击左侧导航栏的 <strong>“代理 (Proxies)”</strong>。</li>
+					<li>在最上方的模式选择里，一定要选 <strong>“规则 (Rule)”</strong>！千万别选“全局 (Global)”。
+						<br/><em>（选规则模式，软件会自动判断：访问百度走国内宽带，访问 Google 走代理节点。选全局模式的话，你连看个 B 站都会绕道洛杉矶，卡死你活该。）</em></li>
+					<li>在下方的节点列表里，点选一个你喜欢的节点，比如“香港 IEPL 01”。</li>
+				</ul>
+
+				<h3>最后一步，拉下电闸：</h3>
+				<p>点击左侧的 <strong>“设置 (Settings)”</strong>，找到 <strong>“系统代理 (System Proxy)”</strong> 的开关，把它打开。</p>
+				<p>大功告成！现在你可以自由访问国际互联网了。不用的时候，把“系统代理”关掉即可。</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<p class="font-bold text-slate-800 text-lg mb-4">搞定客户端了，手里没好线路怎么行？</p>
+				<p>现在你的客户端已经配置好了，手里那台法拉利就缺好油了。千万别去网上找什么‘免费公益节点’，那就是拿你的隐私去裸奔。</p>
+				<p>一步到位，直接选 <strong>闪跃 (IPLC 顶级专线)</strong> 或者 <strong>一翻云 (老牌大厂)</strong>，把订阅链接往里一贴，开启新世界的大门。</p>
+
+				<AffiliateCTA />
+				
+			</article>
+		</section>
+	</main>
+</Layout>
