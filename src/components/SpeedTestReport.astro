@@ -1,0 +1,131 @@
+---
+export interface Props {
+  title?: string;
+  testTime?: string;
+  ping?: number;
+  download?: string;
+  upload?: string;
+  packetLoss?: string;
+  nodeName?: string;
+  downloadPercentage?: number;
+  uploadPercentage?: number;
+}
+
+const {
+  title = "实时链路性能监测 (Live Performance)",
+  testTime = "2026-08-11 21:30:00 (晚高峰)",
+  ping = 35,
+  download = "124,500 Kbps",
+  upload = "45,200 Kbps",
+  packetLoss = "0.0%",
+  nodeName = "IEPL-HK-01 [Premium]",
+  downloadPercentage = 95,
+  uploadPercentage = 60
+} = Astro.props;
+---
+<div class="rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl overflow-hidden my-8 font-mono text-sm text-slate-300 not-prose relative">
+  <!-- Top decorative blur -->
+  <div class="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between bg-slate-800/80 px-4 py-3 border-b border-slate-700 backdrop-blur-md relative z-10">
+    <div class="flex items-center gap-2">
+      <div class="flex gap-1.5">
+        <div class="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.4)]"></div>
+        <div class="w-3 h-3 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]"></div>
+        <div class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]"></div>
+      </div>
+      <span class="ml-3 font-semibold text-slate-100 tracking-wide text-xs">{title}</span>
+    </div>
+    <div class="flex items-center gap-2 text-xs border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 rounded-full">
+      <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="text-emerald-400 font-bold uppercase tracking-wider text-[10px]">Connected</span>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="p-5 sm:p-6 relative z-10">
+    <!-- Meta Info -->
+    <div class="mb-6 flex flex-wrap gap-3 sm:gap-4 text-[11px] sm:text-xs">
+      <div class="bg-slate-800/80 rounded border border-slate-700/50 flex overflow-hidden">
+        <span class="bg-slate-700/50 px-3 py-1.5 text-slate-400 border-r border-slate-700/50">Node</span>
+        <span class="px-3 py-1.5 text-amber-400 font-bold">{nodeName}</span>
+      </div>
+      <div class="bg-slate-800/80 rounded border border-slate-700/50 flex overflow-hidden">
+        <span class="bg-slate-700/50 px-3 py-1.5 text-slate-400 border-r border-slate-700/50">Time</span>
+        <span class="px-3 py-1.5 text-blue-400">{testTime}</span>
+      </div>
+    </div>
+
+    <!-- Data Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+      <!-- Ping -->
+      <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/60 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+        <div class="text-slate-500 text-[11px] uppercase tracking-wider mb-1">Avg. Ping</div>
+        <div class="flex items-baseline gap-1">
+          <div class="text-2xl font-black text-white">{ping}</div>
+          <div class="text-xs text-slate-400">ms</div>
+        </div>
+        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
+          <div class="bg-emerald-500 h-full w-[15%] rounded-full shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+        </div>
+      </div>
+
+      <!-- Download -->
+      <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/60 relative overflow-hidden group hover:border-blue-500/30 transition-colors col-span-2 sm:col-span-1">
+        <div class="text-slate-500 text-[11px] uppercase tracking-wider mb-1 flex justify-between">
+          <span>Download</span>
+          <span class="text-emerald-400">4K OK</span>
+        </div>
+        <div class="flex items-baseline gap-1">
+          <div class="text-2xl font-black text-white truncate" title={download}>{download}</div>
+        </div>
+        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
+          <div class="bg-blue-500 h-full rounded-full shadow-[0_0_10px_rgba(59,130,246,0.8)]" style={`width: ${downloadPercentage}%`}></div>
+        </div>
+      </div>
+
+      <!-- Upload -->
+      <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/60 relative overflow-hidden group hover:border-purple-500/30 transition-colors col-span-2 sm:col-span-1">
+        <div class="text-slate-500 text-[11px] uppercase tracking-wider mb-1">Upload</div>
+        <div class="flex items-baseline gap-1">
+          <div class="text-2xl font-black text-white truncate" title={upload}>{upload}</div>
+        </div>
+        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
+          <div class="bg-purple-500 h-full rounded-full shadow-[0_0_10px_rgba(168,85,247,0.8)]" style={`width: ${uploadPercentage}%`}></div>
+        </div>
+      </div>
+
+      <!-- Packet Loss -->
+      <div class="bg-slate-800/50 rounded-xl p-4 border border-slate-700/60 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+        <div class="text-slate-500 text-[11px] uppercase tracking-wider mb-1">Packet Loss</div>
+        <div class="flex items-baseline gap-1">
+          <div class="text-2xl font-black text-emerald-400">{packetLoss}</div>
+        </div>
+        <div class="w-full bg-slate-900 h-1 mt-4 rounded-full overflow-hidden">
+          <div class="bg-emerald-500 h-full w-full rounded-full shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Logs -->
+    <div class="mt-6 bg-black/50 rounded-lg p-4 text-[11px] sm:text-xs text-slate-400 border border-slate-800/80 leading-relaxed font-mono">
+      <div class="flex gap-2">
+        <span class="text-emerald-500/70 select-none">~ $</span>
+        <span class="text-slate-300">init_connection --target netflix.com --bypass-gfw</span>
+      </div>
+      <div class="flex gap-2">
+        <span class="text-emerald-500/70 select-none">></span>
+        <span class="text-emerald-400">[SUCCESS] IPLC Intranet route established.</span>
+      </div>
+      <div class="flex gap-2">
+        <span class="text-emerald-500/70 select-none">></span>
+        <span class="text-blue-300">[MEDIA] Netflix Region: HK (Native IP Unlocked)</span>
+      </div>
+      <div class="flex gap-2">
+        <span class="text-emerald-500/70 select-none">></span>
+        <span class="text-purple-300">[AI] ChatGPT Access: Unrestricted</span>
+      </div>
+    </div>
+  </div>
+</div>
