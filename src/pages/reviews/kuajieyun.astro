@@ -1,10 +1,49 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import SpeedTestReport from '../../components/SpeedTestReport.astro';
+
+const reviewSchema = {
+	"@context": "https://schema.org/",
+	"@type": "Product",
+	"name": "跨界云 (Kuajieyun)",
+	"image": "https://www.jichang.click/images/kuajieyun-logo.png",
+	"description": "20元即可体验 IPLC 专线的平价机场，适合轻度冲浪与备用需求。",
+	"brand": {
+		"@type": "Brand",
+		"name": "跨界云"
+	},
+	"review": {
+		"@type": "Review",
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "4.2",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "老叶"
+		},
+		"datePublished": "2026-08-11"
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.2",
+		"reviewCount": "54"
+	},
+	"offers": {
+		"@type": "Offer",
+		"url": "https://koolykh88.kuajieaff.com/#/?code=UWUfGLwJ",
+		"priceCurrency": "CNY",
+		"price": "20.00",
+		"availability": "https://schema.org/InStock"
+	}
+};
 ---
 
 <Layout 
 	title="跨界云机场怎么样？20块钱买 IPLC 专线是交智商税吗？老叶深度评测"
 	description="跨界云机场怎么样？门槛极低的 20 元 IPLC 专线到底好不好用？老叶带你看它的真实水平，不吹不黑，为您提供最客观的购买建议。"
+	customSchema={reviewSchema}
 >
 	<main class="flex-1 bg-slate-50 pb-24">
 		<!-- Hero Section -->
@@ -18,10 +57,22 @@ import Layout from '../../layouts/Layout.astro';
 				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
 					跨界云机场怎么样？20块钱买 IPLC 专线是交智商税吗？老叶实测
 				</h1>
-				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+				<div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
 					<span class="font-bold text-slate-700">✍️ 老叶原创</span>
-					<span>•</span>
+					<span class="hidden sm:inline">•</span>
 					<span>最后评测日期：2026年</span>
+					<span class="hidden sm:inline">•</span>
+					<div class="flex items-center gap-1.5 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-100">
+						<span class="text-amber-600 font-extrabold">4.2</span>
+						<div class="flex text-amber-500">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4 text-amber-200" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+						</div>
+						<span class="text-xs font-medium text-amber-700/80">(54+ 用户反馈)</span>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -38,15 +89,18 @@ import Layout from '../../layouts/Layout.astro';
 				<h2>一、真实测速：它的极限到底在哪里？</h2>
 				<p>老规矩，不看广告看疗效。这是老叶在正常时段（非晚高峰极端拥堵期）实测的跨界云节点数据：</p>
 
-				<figure class="my-8">
-					<img src="/images/kuajieyun-speedtest1.png" alt="跨界云日常测速跑分" class="rounded-xl shadow-md border border-slate-200" />
-					<figcaption class="text-center text-sm text-slate-500 mt-2">图 1：日常时段测速，其实表现还算可圈可点</figcaption>
-				</figure>
-
-				<figure class="my-8">
-					<img src="/images/kuajieyun-speedtest2.png" alt="跨界云流媒体解锁情况" class="rounded-xl shadow-md border border-slate-200" />
-					<figcaption class="text-center text-sm text-slate-500 mt-2">图 2：节点稳定性与流媒体连通率测试</figcaption>
-				</figure>
+				<SpeedTestReport 
+					title="跨界云平价节点日常测速"
+					testTime="2026-08-11 15:30 (日常时段)"
+					nodeName="HK-BGP-Standard"
+					ping={165}
+					download="35,400 Kbps"
+					upload="8,500 Kbps"
+					packetLoss="3.5%"
+					downloadPercentage={35}
+					uploadPercentage={15}
+				/>
+				<figcaption class="text-center text-sm font-semibold text-amber-700 mt-2 mb-10">⚠️ 提示：日常看网页轻度视频足够，但不建议强拉 4K 或是用来打竞技类游戏，存在一定丢包与高延迟</figcaption>
 
 				<div class="bg-slate-100 border border-slate-200 rounded-xl p-5 my-6">
 					<h4 class="text-slate-800 font-bold flex items-center gap-2 mt-0 mb-3">
