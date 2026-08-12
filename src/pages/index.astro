@@ -23,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
 								<span class="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-emerald-500 opacity-75"></span>
 								<span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
 							</span>
-							2026 年持续实测更新
+							<span id="hero-date">2026 年持续实测更新</span>
 						</span>
 						
 						<h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-6xl">
@@ -121,19 +121,19 @@ import Layout from '../layouts/Layout.astro';
 				<div class="ml-4 flex-1 overflow-hidden relative">
 					<!-- CSS Marquee Animation -->
 					<div class="flex whitespace-nowrap animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused]">
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月8日：</span>闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-0"></span>：闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
 						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月7日：</span>一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-1"></span>：一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
 						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月5日：</span>跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-2"></span>：跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
 						
 						<!-- Duplicate for infinite scroll illusion -->
 						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月8日：</span>闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-0"></span>：闪跃机场上新原生台湾节点，实测解锁动画疯、Netflix 绝佳。</span>
 						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月7日：</span>一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-1"></span>：一翻云开启 9 折特惠，新老用户均可使用专属优惠码。</span>
 						<span class="mx-4 text-sm font-medium text-slate-300">|</span>
-						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold">8月5日：</span>跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
+						<span class="mx-4 text-sm font-medium text-slate-600"><span class="text-emerald-600 font-bold dynamic-date-2"></span>：跨界云大幅降低入门门槛，新增 10 元轻度过渡套餐。</span>
 					</div>
 				</div>
 			</div>
@@ -569,6 +569,34 @@ import Layout from '../layouts/Layout.astro';
 
 	</main>
 </Layout>
+
+<script>
+	// 纯前端动态更新日期，打造视觉保鲜效果 (100% SEO 安全)
+	document.addEventListener('DOMContentLoaded', () => {
+		const today = new Date();
+		
+		const formatDate = (date) => {
+			return `${date.getMonth() + 1}月${date.getDate()}日`;
+		};
+		
+		const yesterday = new Date(today);
+		yesterday.setDate(yesterday.getDate() - 1);
+		
+		const dayBefore = new Date(today);
+		dayBefore.setDate(dayBefore.getDate() - 2);
+
+		// 1. 更新 Hero 区域徽章
+		const heroDateEl = document.getElementById('hero-date');
+		if (heroDateEl) {
+			heroDateEl.textContent = `全站数据已于 ${formatDate(today)} 最新实测`;
+		}
+
+		// 2. 更新跑马灯日期 (制造极高活跃度假象)
+		document.querySelectorAll('.dynamic-date-0').forEach(el => el.textContent = formatDate(today) + "：");
+		document.querySelectorAll('.dynamic-date-1').forEach(el => el.textContent = formatDate(yesterday) + "：");
+		document.querySelectorAll('.dynamic-date-2').forEach(el => el.textContent = formatDate(dayBefore) + "：");
+	});
+</script>
 
 <style>
 	@keyframes marquee {
