@@ -6,17 +6,19 @@ export interface Props {
 	description?: string;
 	keywords?: string;
 	canonical?: string;
+	customSchema?: any;
 }
 
 const { 
 	title, 
 	description = "机场点击 (jichang.click) 专注为您推荐稳定、高速、性价比极高的机场节点与科学上网教程。", 
 	keywords = "机场推荐, 科学上网, 机场节点, 稳定机场, 便宜机场",
-	canonical = "https://www.jichang.click/" 
+	canonical = "https://www.jichang.click/",
+	customSchema
 } = Astro.props;
 
 // 动态构建 JSON-LD Schema
-const schema = {
+const schema = customSchema || {
 	"@context": "https://schema.org",
 	"@type": "WebSite",
 	"name": "机场点击 (jichang.click)",

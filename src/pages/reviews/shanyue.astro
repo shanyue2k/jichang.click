@@ -1,11 +1,49 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import SpeedTestReport from '../../components/SpeedTestReport.astro';
+
+const reviewSchema = {
+	"@context": "https://schema.org/",
+	"@type": "Product",
+	"name": "闪跃机场 (Shanyue)",
+	"image": "https://www.jichang.click/images/shanyue-logo.png",
+	"description": "极具性价比的全线 IPLC 专线机场，支持 Netflix 原生解锁，晚高峰测速稳定。",
+	"brand": {
+		"@type": "Brand",
+		"name": "闪跃"
+	},
+	"review": {
+		"@type": "Review",
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "4.8",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "老叶"
+		},
+		"datePublished": "2026-08-11"
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.8",
+		"reviewCount": "127"
+	},
+	"offers": {
+		"@type": "Offer",
+		"url": "https://koolykh88.flashleapaff.com/#/?code=6kHcdCND",
+		"priceCurrency": "CNY",
+		"price": "19.20",
+		"availability": "https://schema.org/InStock"
+	}
+};
 ---
 
 <Layout 
 	title="闪跃机场怎么样？跑路了吗？2026 最新晚高峰实测与 IPLC 专线评测"
 	description="闪跃机场怎么样？十几块钱的 IPLC 专线是不是杀猪盘跑路预警？老叶自费购买，为您带来最真实的晚高峰 4K 测速与 Netflix 解锁深度评测。"
+	customSchema={reviewSchema}
 >
 	<main class="flex-1 bg-slate-50 pb-24">
 		<!-- Hero Section -->
@@ -19,10 +57,22 @@ import SpeedTestReport from '../../components/SpeedTestReport.astro';
 				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
 					闪跃机场怎么样？跑路了吗？2026 最新晚高峰实测与 IPLC 专线评测
 				</h1>
-				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+				<div class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
 					<span class="font-bold text-slate-700">✍️ 老叶原创</span>
-					<span>•</span>
+					<span class="hidden sm:inline">•</span>
 					<span>最后评测日期：2026年</span>
+					<span class="hidden sm:inline">•</span>
+					<div class="flex items-center gap-1.5 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-100">
+						<span class="text-amber-600 font-extrabold">4.8</span>
+						<div class="flex text-amber-500">
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+							<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+						</div>
+						<span class="text-xs font-medium text-amber-700/80">(127+ 用户反馈)</span>
+					</div>
 				</div>
 			</div>
 		</section>
