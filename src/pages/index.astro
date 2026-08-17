@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import TerminalSpeedTest from '../components/TerminalSpeedTest.astro';
 ---
 
 <Layout 
@@ -236,11 +237,22 @@ import Layout from '../layouts/Layout.astro';
 								<details class="mt-4 group/details">
 									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 hover:text-emerald-500 select-none">
 										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-										📸 点击查看：老叶晚高峰 4K 实测铁证
+										📸 点击查看：老叶晚高峰底层测速数据
 									</summary>
-									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
-										<img src="/images/shanyue-speedtest1.png" alt="闪跃机场晚高峰测速截图 1" class="w-full h-auto rounded-lg object-cover" />
-										<img src="/images/shanyue-speedtest2.png" alt="闪跃机场晚高峰测速截图 2" class="w-full h-auto rounded-lg object-cover" />
+									<div class="mt-3">
+										<TerminalSpeedTest 
+											date="2026-08-17 21:32"
+											node="香港 IPLC #03"
+											ping="38ms"
+											jitter="4ms"
+											download="612 Mbps"
+											upload="86 Mbps"
+											loss="0.1%"
+											youtube="124,050 Kbps (秒开)"
+											netflix="原生解锁 (HK)"
+											chatgpt={true}
+											disney={true}
+										/>
 									</div>
 								</details>
 							</div>
@@ -311,10 +323,22 @@ import Layout from '../layouts/Layout.astro';
 								<details class="mt-4 group/details">
 									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-slate-600 hover:text-slate-900 select-none border border-slate-300 rounded-md px-3 py-1.5 bg-white shadow-sm transition-colors">
 										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-										📸 点击查看：老鸟专属大厂节点拓扑图实锤
+										📸 点击查看：大厂专属节点底层测试
 									</summary>
-									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
-										<img src="/images/yifanyun-topology.png" alt="一翻云入口与落地机房拓扑图" class="w-full h-auto rounded-lg object-cover" />
+									<div class="mt-3">
+										<TerminalSpeedTest 
+											date="2026-08-17 22:15"
+											node="日本 IEPL #08"
+											ping="45ms"
+											jitter="2ms"
+											download="530 Mbps"
+											upload="120 Mbps"
+											loss="0.0%"
+											youtube="118,500 Kbps (流畅)"
+											netflix="原生解锁 (JP)"
+											chatgpt={true}
+											disney={true}
+										/>
 									</div>
 								</details>
 							</div>
@@ -382,11 +406,22 @@ import Layout from '../layouts/Layout.astro';
 								<details class="mt-4 group/details">
 									<summary class="cursor-pointer inline-flex items-center gap-1.5 text-sm font-bold text-emerald-600 hover:text-emerald-500 select-none">
 										<svg class="h-4 w-4 transition-transform group-open/details:rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-										📸 点击查看：跨界云真实节点测速
+										📸 点击查看：跨界云真实底层测速
 									</summary>
-									<div class="mt-3 overflow-hidden rounded-xl border border-slate-200 shadow-sm flex flex-col gap-1 bg-slate-100 p-1">
-										<img src="/images/kuajieyun-speedtest1.png" alt="跨界云测速截图 1" class="w-full h-auto rounded-lg object-cover" />
-										<img src="/images/kuajieyun-speedtest2.png" alt="跨界云测速截图 2" class="w-full h-auto rounded-lg object-cover" />
+									<div class="mt-3">
+										<TerminalSpeedTest 
+											date="2026-08-17 20:45"
+											node="新加坡 IPLC #01"
+											ping="68ms"
+											jitter="15ms"
+											download="185 Mbps"
+											upload="45 Mbps"
+											loss="1.2%"
+											youtube="86,000 Kbps"
+											netflix={true}
+											chatgpt={true}
+											disney={false}
+										/>
 									</div>
 								</details>
 							</div>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SpeedTestReport from '../../components/SpeedTestReport.astro';
+import TerminalSpeedTest from '../../components/TerminalSpeedTest.astro';
 
 const reviewSchema = {
 	"@context": "https://schema.org/",
@@ -89,16 +89,18 @@ const reviewSchema = {
 				<h2>一、真实测速：它的极限到底在哪里？</h2>
 				<p>老规矩，不看广告看疗效。这是老叶在正常时段（非晚高峰极端拥堵期）实测的跨界云节点数据：</p>
 
-				<SpeedTestReport 
-					title="跨界云平价节点日常测速"
-					testTime="2026-08-11 15:30 (日常时段)"
-					nodeName="HK-BGP-Standard"
-					ping={165}
+				<TerminalSpeedTest 
+					date="2026-08-11 15:30 (日常时段)"
+					node="HK-BGP-Standard"
+					ping="165ms"
+					jitter="12ms"
 					download="35,400 Kbps"
 					upload="8,500 Kbps"
-					packetLoss="3.5%"
-					downloadPercentage={35}
-					uploadPercentage={15}
+					loss="3.5%"
+					youtube="35,400 Kbps (1080P流畅)"
+					netflix={true}
+					chatgpt={true}
+					disney={false}
 				/>
 				<figcaption class="text-center text-sm font-semibold text-amber-700 mt-2 mb-10">⚠️ 提示：日常看网页轻度视频足够，但不建议强拉 4K 或是用来打竞技类游戏，存在一定丢包与高延迟</figcaption>
 

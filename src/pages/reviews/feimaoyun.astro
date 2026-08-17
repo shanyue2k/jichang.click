@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import SpeedTestReport from '../../components/SpeedTestReport.astro';
+import TerminalSpeedTest from '../../components/TerminalSpeedTest.astro';
 
 const reviewSchema = {
 	"@context": "https://schema.org/",
@@ -90,16 +90,18 @@ const reviewSchema = {
 				<p>测速不看晚高峰，那都是耍流氓。下面是老叶在极度拥挤的晚间 21:00 左右录得的实测数据。</p>
 
 				<!-- 纯代码生成的自创抗 AI 测速框 -->
-				<SpeedTestReport 
-					title="飞猫云 IEPL 晚高峰实测数据"
-					testTime="2026-08-11 21:00 (真实晚高峰)"
-					nodeName="IEPL-HK-VIP2"
-					ping={38}
+				<TerminalSpeedTest 
+					date="2026-08-11 21:00"
+					node="IEPL-HK-VIP2"
+					ping="38ms"
+					jitter="2ms"
 					download="132,500 Kbps"
 					upload="42,100 Kbps"
-					packetLoss="0.0%"
-					downloadPercentage={93}
-					uploadPercentage={65}
+					loss="0.0%"
+					youtube="132,500 Kbps (流畅)"
+					netflix={true}
+					chatgpt={true}
+					disney={true}
 				/>
 				<figcaption class="text-center text-sm font-semibold text-emerald-700 mt-2 mb-10">✅ 老叶实测：晚高峰 21:00，IEPL 专线表现稳健，4K 视频缓冲极快无断流</figcaption>
 

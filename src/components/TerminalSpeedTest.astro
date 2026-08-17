@@ -1,0 +1,69 @@
+---
+export interface Props {
+	date: string;
+	env?: string;
+	node: string;
+	ping: string;
+	jitter: string;
+	download: string;
+	upload: string;
+	loss: string;
+	youtube?: boolean | string;
+	netflix?: boolean | string;
+	chatgpt?: boolean | string;
+	disney?: boolean | string;
+}
+
+const { 
+	date, 
+	env = "上海电信 1000M", 
+	node, 
+	ping, 
+	jitter, 
+	download, 
+	upload, 
+	loss, 
+	youtube = true, 
+	netflix = true, 
+	chatgpt = true, 
+	disney = true 
+} = Astro.props;
+
+const renderCheck = (val: boolean | string) => {
+	if (typeof val === 'string') return `<span class="text-emerald-400">[✓]</span> ${val}`;
+	return val ? '<span class="text-emerald-400">[✓]</span> 解锁' : '<span class="text-rose-400">[✗]</span> 失败';
+};
+---
+
+<div class="bg-slate-900 rounded-xl overflow-hidden font-mono text-xs sm:text-sm text-slate-300 shadow-xl border border-slate-800 my-4 select-all">
+	<!-- Terminal Header -->
+	<div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700 select-none">
+		<div class="flex gap-1.5">
+			<div class="w-3 h-3 rounded-full bg-rose-500"></div>
+			<div class="w-3 h-3 rounded-full bg-amber-500"></div>
+			<div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+		</div>
+		<div class="text-slate-400 text-xs ml-2 opacity-70">root@laoye-lab:~# speedtest-cli --target={node}</div>
+	</div>
+	
+	<!-- Terminal Body -->
+	<div class="p-4 sm:p-5 overflow-x-auto whitespace-pre leading-relaxed">
+<span class="text-emerald-400 font-bold">&gt; 正在获取底层网络协议栈日志... [OK]</span>
+<span class="text-slate-600">======================================================</span>
+<span class="text-sky-400 font-bold">[Date]</span> {date}
+<span class="text-sky-400 font-bold">[Env ]</span> {env}
+<span class="text-sky-400 font-bold">[Node]</span> {node}
+<span class="text-slate-600">------------------------------------------------------</span>
+PING   : <span class="text-amber-400">{ping.padEnd(8)}</span> | JITTER : <span class="text-amber-400">{jitter}</span>
+DL     : <span class="text-emerald-400 font-bold">{download.padEnd(8)}</span> | UL     : <span class="text-emerald-400 font-bold">{upload}</span>
+LOSS   : <span class="text-rose-400">{loss.padEnd(8)}</span> | TESTS  : 5 (Avg)
+<span class="text-slate-600">------------------------------------------------------</span>
+<span class="text-slate-400 font-bold">Streaming & AI Unlock Status:</span>
+YouTube 4K/8K : <span set:html={renderCheck(youtube)}></span>
+Netflix       : <span set:html={renderCheck(netflix)}></span>
+ChatGPT       : <span set:html={renderCheck(chatgpt)}></span>
+Disney+       : <span set:html={renderCheck(disney)}></span>
+<span class="text-slate-600">======================================================</span>
+<span class="text-emerald-400 font-bold animate-pulse">_</span>
+	</div>
+</div>
