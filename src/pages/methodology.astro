@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+	title="老叶机场评分标准与测速方法论 - 机场点击"
+	description="机场点击 (jichang.click) 的评分是瞎编的吗？老叶为您公开透明地展示本站的 5 大维度加权打分公式，以及真实的晚高峰测速与抓包原理。"
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-16">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-5xl">
+					老叶独家评分标准
+				</h1>
+				<p class="mt-4 text-lg text-slate-600 font-medium">
+					没有推导公式的分数就是耍流氓。公开透明，拒绝云评测。
+				</p>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<h2>为什么我们需要一套极其严苛的打分公式？</h2>
+				<p>现在网上的机场推销博客满天飞，随便拉个野鸡机场出来，博主都能给打个“10分满分”，闭眼狂吹。很多小白看到高分就去买，结果一到晚上 8 点就卡得连 Google 都打不开。</p>
+				<p>为了对得起“老叶”这个招牌，也为了能为大家筛选出真正<strong>稳定、防跑路</strong>的高性价比专线，本站首页的排行榜分数（如闪跃的 9.7 分，一翻云的 9.2 分），全部基于以下 <strong>5 大维度严格加权计算</strong>得出。</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<div class="space-y-12">
+					<!-- 维度 1 -->
+					<div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-emerald-500 text-white font-black px-4 py-2 rounded-bl-2xl">
+							权重 30%
+						</div>
+						<h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mt-0 mb-4">
+							<span class="text-emerald-500">🚀</span> 维度一：晚高峰绝对速度
+						</h3>
+						<p class="text-sm text-slate-600 mb-0">
+							<strong>测试环境：</strong> 上海电信 1000M 宽带，测试时间严格锁定在拥堵期 <strong>20:00 - 23:00</strong>。<br/>
+							<strong>打分标准：</strong> 不看测速软件跑出来的虚假带宽（很容易作弊），只看 YouTube 视频的实时连接速度 (Connection Speed)。<br/>
+							• <strong>10分：</strong> 晚高峰能秒开 YouTube 8K 视频，拖拽进度条不缓冲（通常只有顶级 IPLC 能做到）。<br/>
+							• <strong>8分：</strong> 晚高峰 4K 视频流畅播放，起播缓冲小于 2 秒。<br/>
+							• <strong>不及格 (不推荐)：</strong> 晚高峰只能看 1080P，甚至连网页加载都转圈。
+						</p>
+					</div>
+
+					<!-- 维度 2 -->
+					<div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-emerald-500 text-white font-black px-4 py-2 rounded-bl-2xl">
+							权重 25%
+						</div>
+						<h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mt-0 mb-4">
+							<span class="text-emerald-500">🛡️</span> 维度二：长期稳定性与丢包率
+						</h3>
+						<p class="text-sm text-slate-600 mb-0">
+							<strong>打分标准：</strong> 速度再快，老是掉线也不行。老叶会通过探针服务器对机场的主力节点进行全天候 TCP Ping 检测。<br/>
+							• <strong>10分：</strong> 连续 7 天测试，晚高峰全节点飘绿，丢包率严格控制在 <strong>0% - 0.5%</strong> 之间（老牌大厂一翻云经常能拿满分）。<br/>
+							• <strong>8分：</strong> 偶尔出现个别节点报红，但通过订阅更新能迅速恢复，不影响正常使用。<br/>
+							• <strong>不及格：</strong> 经常遇到节点大面积超时 (Timeout) 且半天无人修复。
+						</p>
+					</div>
+
+					<!-- 维度 3 -->
+					<div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-emerald-500 text-white font-black px-4 py-2 rounded-bl-2xl">
+							权重 20%
+						</div>
+						<h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mt-0 mb-4">
+							<span class="text-emerald-500">💰</span> 维度三：价格与绝对性价比
+						</h3>
+						<p class="text-sm text-slate-600 mb-0">
+							<strong>打分标准：</strong> 结合机场的线路质量（直连/公网隧道/IEPL/IPLC），核算每 100G 流量的真实成本。<br/>
+							• <strong>10分：</strong> 提供了极其违反市场常规的超低价格，且线路质量极高。例如“闪跃机场”用不到 20 块钱的价格提供纯正 IPLC 专线，直接拉满 10 分。<br/>
+							• <strong>8分：</strong> 价格适中，符合行业标准，套餐设置合理没有捆绑销售。<br/>
+							• <strong>不及格：</strong> 纯割韭菜，用普通中转线卖着专线的价格，或者强迫用户只准买年付。
+						</p>
+					</div>
+
+					<!-- 维度 4 -->
+					<div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-emerald-500 text-white font-black px-4 py-2 rounded-bl-2xl">
+							权重 15%
+						</div>
+						<h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mt-0 mb-4">
+							<span class="text-emerald-500">🍿</span> 维度四：流媒体与 AI 工具原生解锁
+						</h3>
+						<p class="text-sm text-slate-600 mb-0">
+							<strong>打分标准：</strong> 使用第三方脚本核查机房 IP 的纯净度。<br/>
+							• <strong>10分：</strong> 港日美新等主力节点 100% 达成原生解锁 Netflix，支持 Disney+，且随意使用 ChatGPT / Claude 不会遭遇风控和封号。<br/>
+							• <strong>8分：</strong> 部分节点依赖 DNS 解锁，偶尔会提示“使用代理工具”，但能正常使用。<br/>
+							• <strong>不及格：</strong> IP 被严重污染，经常遇到 Google 频繁弹验证码。
+						</p>
+					</div>
+
+					<!-- 维度 5 -->
+					<div class="bg-white rounded-2xl p-8 shadow-sm ring-1 ring-slate-200 relative overflow-hidden">
+						<div class="absolute top-0 right-0 bg-emerald-500 text-white font-black px-4 py-2 rounded-bl-2xl">
+							权重 10%
+						</div>
+						<h3 class="text-xl font-bold text-slate-900 flex items-center gap-2 mt-0 mb-4">
+							<span class="text-emerald-500">🏃</span> 维度五：老板活跃度与防跑路评估
+						</h3>
+						<p class="text-sm text-slate-600 mb-0">
+							<strong>打分标准：</strong> 机场圈跑路是常态，必须防患于未然。<br/>
+							• <strong>10分：</strong> 具有几年历史的老牌大厂，或者新晋机场但老板在 Telegram 售后群极度活跃，出问题 5 分钟内发公告并补偿。<br/>
+							• <strong>不及格：</strong> 疯狂推销“终身卡”、“骨折年付卡”，且客服群开启全体禁言。遇到这种哪怕速度再快，老叶也会直接拉黑绝不推荐。
+						</p>
+					</div>
+				</div>
+
+				<hr class="my-10 border-slate-200" />
+
+				<div class="bg-slate-100 rounded-2xl p-8 text-center">
+					<h3 class="text-2xl font-bold text-slate-900 mt-0 mb-4">结论</h3>
+					<p class="text-slate-600 mb-6">
+						只有在这 5 个维度中经过层层筛选，最终加权得分在 <strong>8.5分以上</strong> 的机场，才有资格登上老叶的首页排行榜。
+					</p>
+					<a href="/#rankings" class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-8 py-3 text-base font-bold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-400 transition-all hover:-translate-y-0.5 text-decoration-none">
+						回到首页查看高分排行榜
+					</a>
+				</div>
+
+			</article>
+		</section>
+	</main>
+</Layout>
