@@ -1,20 +1,161 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// 数据驱动的 FAQ 库，方便维护和自动生成 Schema
+const faqData = [
+	{
+		id: "basics",
+		title: "基础概念与入门",
+		questions: [
+			{
+				q: "机场、梯子、科学上网到底有什么区别？",
+				a: "<p>其实是一回事。早年间常用的翻墙软件（比如 V2Ray）图标是个小纸飞机，所以卖节点订阅的服务商就被圈内人俗称为“机场”。</p><p class='mt-2'>而“梯子”是所有翻墙工具（包括 VPN、自建节点、机场）的统称。简单来说：买梯子，现在的最优解就是买个机场订阅。</p>"
+			},
+			{
+				q: "为什么很多人把机场叫做梯子？",
+				a: "<p>因为“墙”的存在，我们需要工具去“翻越”它，所以大家形象地把这类代理工具比喻成“梯子”。机场只是众多梯子中目前最流行、速度最快的一种商业化形式。</p>"
+			},
+			{
+				q: "科学上网/魔法上网工具是什么意思？",
+				a: "<p>这些都是国内为了规避敏感词汇而发明的黑话。“科学上网”或者“魔法上网”本质上就是使用机场节点，通过加密协议突破网络审查，访问 Google、YouTube 等海外网站。</p>"
+			},
+			{
+				q: "新手怎么选择机场？",
+				a: "<p>新手最容易被花里胡哨的参数忽悠。老叶建议新手只看三点：<strong>1. 必须有你需要的客户端教程</strong>（保证你能连上）；<strong>2. 必须有月付套餐</strong>（防止跑路踩坑）；<strong>3. 晚高峰能看 1080P/4K 视频不卡</strong>。本站的实测榜单都是按这个标准筛出来的。</p>"
+			},
+			{
+				q: "机场一般怎么使用？",
+				a: "<p>三步走：1. 在机场官网购买套餐；2. 在后台复制你的“一键订阅链接”；3. 把链接导入到你的代理软件（比如电脑用 Clash，苹果手机用 Shadowrocket）里，点击开启即可。</p>"
+			},
+			{
+				q: "机场订阅链接是什么？",
+				a: "<p>订阅链接就像是一把带密码的“万能钥匙”。它是一个网址（URL），里面包含了你购买的机场所有的服务器节点信息和密码。只要把这个链接填进 Clash 或小火箭里，软件就会自动把你买的几十个节点下载下来。</p>"
+			},
+			{
+				q: "机场和代理有什么区别？",
+				a: "<p>机场是“服务商”，卖给你的是服务器节点；而代理软件（比如 Clash、v2rayN）是“工具”。打个比方，机场是移动联通的手机卡（提供流量和信号），代理软件是你的手机（用来插卡上网）。</p>"
+			}
+		]
+	},
+	{
+		id: "speed",
+		title: "线路与测速真相",
+		questions: [
+			{
+				q: "IPLC、IEPL 和普通中转线路有什么区别？",
+				a: "<p>普通中转走的是跨境公网，一到晚上 8 点到 11 点的晚高峰，必然会遇到拥堵和丢包。</p><p class='mt-2'>而 <strong>IPLC 和 IEPL 是物理内网专线</strong>，数据根本不经过防火长城（GFW），等同于两点一线的“局域网”。对于打游戏、看 4K 和需要极度稳定 AI 对话的用户，认准这俩词买就对了（例如闪跃机场就是纯正的 IPLC）。</p>"
+			},
+			{
+				q: "机场为什么白天快晚上慢？",
+				a: "<p>因为晚上 20:00 - 23:00 是全国网民看视频、打游戏的高峰期，跨国宽带的总出口就那么大，全堵在路上了（俗称“晚高峰炸炉”）。只有那些花大价钱买了 IPLC 专线的机场，晚上才能保持白天一样的速度。</p>"
+			},
+			{
+				q: "机场连不上/显示超时是什么原因？",
+				a: "<p>常见原因有三个：1. 机场正好遇到了大规模的“墙”升级，节点被封（等机场主修复）；2. 你的电脑时间不准（V2Ray 协议要求电脑时间误差不超过 1 分钟）；3. 你本地的 DNS 污染了或者缓存问题（重启软件或清空缓存）。</p>"
+			},
+			{
+				q: "机场节点越多越好吗？",
+				a: "<p><strong>绝对不是！</strong>很多垃圾机场搞 200 多个节点，其实都是在后台用一台烂机器复用出来的。真正的高端机场往往只有 30-50 个节点，但每一个都是实打实的高价机器。老叶的名言：宁要 3 个稳如老狗的香港节点，不要 100 个卡成幻灯片的野鸡节点。</p>"
+			},
+			{
+				q: "机场节点全红怎么办？",
+				a: "<p>先点一下软件里的“更新订阅”，看看是不是机场换了节点 IP。如果更新后还是全红（Timeout），请马上访问机场官网看公告，大概率是遭到了攻击或者墙升级。如果官网也打不开，那可能是跑路了。</p>"
+			},
+			{
+				q: "直连机场和中转机场有什么区别？",
+				a: "<p>直连机场就是你的电脑直接连到国外的服务器，速度全看你的宽带运营商脸色，非常容易被墙；中转机场则是你的电脑先连到国内的 BGP 服务器（比如上海、广州），再由国内服务器通过专线传到国外，速度和稳定性秒杀直连。</p>"
+			}
+		]
+	},
+	{
+		id: "unlock",
+		title: "流媒体与 AI 解锁",
+		questions: [
+			{
+				q: "什么叫“原生 IP”？为什么看 Netflix 必须用它？",
+				a: "<p>原生 IP 就是当地宽带运营商分配的本土 IP。Netflix、Disney+ 甚至 ChatGPT 为了防止滥用，会大规模封杀机房（数据中心）的商业 IP。</p><p class='mt-2'>如果你用的机场节点不是原生 IP，轻则只能看 Netflix 自制剧，重则直接被 ChatGPT 封号。本站评测明确标注了“原生解锁”的机场，老叶亲自测试过，随便看。</p>"
+			},
+			{
+				q: "机场为什么有些节点不能看流媒体？",
+				a: "<p>因为 IP 被流媒体平台（如 Netflix）精准识别并拉黑了。买这些 IP 的成本很低，所以很多便宜机场只提供基础的翻墙功能。如果要稳定看流媒体，请务必在机场测速页查看“流媒体解锁”那一栏是否全绿。</p>"
+			},
+			{
+				q: "机场为什么有些节点不能用 AI 工具（如 ChatGPT/Claude）？",
+				a: "<p>AI 公司（特别是 Claude）的风控比 Netflix 还要严格几倍。如果一个机场节点下同时有几百个人在问 ChatGPT，这个 IP 瞬间就会被拉黑。所以用 AI，必须选小众机房或者纯正住宅 IP 的高质量节点。</p>"
+			},
+			{
+				q: "机场住宅 IP 是什么意思？",
+				a: "<p>住宅 IP (Residential IP) 就是普通老百姓家里用的宽带 IP。这种 IP 几乎不可能被任何流媒体或 AI 公司封杀，因为他们不敢误杀真正的本地居民。但是住宅 IP 成本极高且极度稀缺，只有少数高端机场或定制化服务才提供。</p>"
+			}
+		]
+	},
+	{
+		id: "scam",
+		title: "避坑与防跑路",
+		questions: [
+			{
+				q: "机场流量每月会重置吗？",
+				a: "<p>大部分周期付套餐（月付/季付/年付）的流量是<strong>每月定期清零重置</strong>的，没用完的流量不会结转到下个月。但如果是“按量付费”或“不限时套餐”，流量则是用多少扣多少，直到用完为止。</p>"
+			},
+			{
+				q: "不限时机场是什么意思？",
+				a: "<p>就是你花一笔钱买一个固定的流量包（比如 100 块买 500GB），只要你不把这 500GB 用完，这个套餐就永远不过期。这对于只在周末偶尔看看剧、查查资料的轻度用户来说，是性价比最高的选择。</p>"
+			},
+			{
+				q: "便宜机场推荐看哪些指标？",
+				a: "<p>低于 15 块钱的便宜机场，不要奢求全线 IPLC。只要满足三点就能买：1. 有退款保证或 1 元试用；2. 晚高峰 1080P 能流畅播放；3. 有活跃的 Telegram 售后群（能找到老板）。</p>"
+			},
+			{
+				q: "怎么判断机场会不会跑路？",
+				a: "<p>这是玄学，但有几个极其危险的信号：1. 疯狂推出史无前例的“两折年付卡”、“终身买断卡”；2. 官网 TG 群突然禁言；3. 节点大面积瘫痪超过 3 天且没有合理的公告。遇到这三条，千万别充钱！</p>"
+			},
+			{
+				q: "免费试用机场安全吗？",
+				a: "<p>如果是大型机场提供的 1-3 天免费试用，通常是安全的，只是为了让你体验线路。但如果是那些号称“永久免费”的野鸡机场，一定要小心：它们很有可能会记录你的浏览历史甚至劫持你的密码，毕竟“免费的才是最贵的”。</p>"
+			},
+			{
+				q: "月付、季付还是年付划算？",
+				a: "<p>记住老叶的铁律：<strong>新机场、第一次用的机场，永远只买月付！</strong>花几十块钱试水一个月，确认晚高峰不卡，再考虑长期。只有那些开了两年以上的老牌大厂，你用着满意了，再去买年付吃折扣。</p>"
+			},
+			{
+				q: "机场官网打不开/换域名怎么办？",
+				a: "<p>因为墙的封锁，机场官网的域名存活期往往只有几个月。老叶建议：买完机场后，<strong>一定要保存它的永久备用网址，或者关注它的官方 Telegram 频道</strong>。就算原域名被墙，在频道里也能找到最新的回家地址。</p>"
+			}
+		]
+	}
+];
+
+// 动态构建 Google FAQPage Schema
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqData.flatMap(category => 
+		category.questions.map(q => ({
+			"@type": "Question",
+			"name": q.q,
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": q.a
+			}
+		}))
+	)
+};
 ---
 
 <Layout 
-	title="机场问题库：100% 真实避坑与防跑路指南 - 机场点击"
+	title="机场长尾问题库：24个超全基础概念与避坑指南 - 机场点击"
 	description="机场点击独家整理的长尾问题库，涵盖机场、梯子、科学上网的基础概念，IPLC专线测速真相，Netflix/ChatGPT原生解锁指南，以及防跑路避坑铁律。"
+	customSchema={faqSchema}
 >
 	<main class="flex-1 bg-slate-50 pb-24">
 		<!-- Hero Section -->
 		<section class="bg-white border-b border-slate-200 py-16">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-5xl">
-					老叶长尾问题库
+					老叶的 24 个常见问题库
 				</h1>
 				<p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-					从“怎么选机场”到“防杀猪盘”，这里没有恰饭软文，只有 100% 真实、毒舌的避坑指南。持续更新中。
+					从“怎么选机场”到“防杀猪盘”，这里收录了新手最关心的核心疑虑。没有恰饭软文，只有 100% 真实、毒舌的避坑指南。
 				</p>
 			</div>
 		</section>
@@ -27,10 +168,11 @@ import Layout from '../layouts/Layout.astro';
 				<div class="hidden lg:block sticky top-24">
 					<h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">问题分类</h3>
 					<nav class="flex flex-col gap-2 border-l-2 border-slate-200">
-						<a href="#basics" class="block pl-4 py-1 text-sm font-semibold text-slate-600 hover:border-l-2 hover:border-emerald-500 hover:text-emerald-600 hover:-ml-[2px] transition-all">基础概念与入门</a>
-						<a href="#speed" class="block pl-4 py-1 text-sm font-semibold text-slate-600 hover:border-l-2 hover:border-emerald-500 hover:text-emerald-600 hover:-ml-[2px] transition-all">线路与测速真相</a>
-						<a href="#unlock" class="block pl-4 py-1 text-sm font-semibold text-slate-600 hover:border-l-2 hover:border-emerald-500 hover:text-emerald-600 hover:-ml-[2px] transition-all">流媒体与 AI 解锁</a>
-						<a href="#scam" class="block pl-4 py-1 text-sm font-semibold text-slate-600 hover:border-l-2 hover:border-emerald-500 hover:text-emerald-600 hover:-ml-[2px] transition-all">避坑与防跑路</a>
+						{faqData.map(cat => (
+							<a href={`#${cat.id}`} class="block pl-4 py-1 text-sm font-semibold text-slate-600 hover:border-l-2 hover:border-emerald-500 hover:text-emerald-600 hover:-ml-[2px] transition-all">
+								{cat.title}
+							</a>
+						))}
 					</nav>
 
 					<div class="mt-8 p-4 bg-emerald-50 rounded-xl border border-emerald-100">
@@ -43,150 +185,37 @@ import Layout from '../layouts/Layout.astro';
 
 				<!-- 移动端分类导航 (仅在小屏幕显示) -->
 				<div class="flex lg:hidden overflow-x-auto gap-2 pb-4 mb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-					<a href="#basics" class="whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm border border-slate-200">基础概念</a>
-					<a href="#speed" class="whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm border border-slate-200">线路与测速</a>
-					<a href="#unlock" class="whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm border border-slate-200">流媒体与 AI</a>
-					<a href="#scam" class="whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm border border-slate-200">避坑与防跑路</a>
+					{faqData.map(cat => (
+						<a href={`#${cat.id}`} class="whitespace-nowrap rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-600 shadow-sm border border-slate-200">
+							{cat.title.split('与')[0]}
+						</a>
+					))}
 				</div>
 
 				<!-- 右侧：问题列表 -->
 				<div class="space-y-16">
 					
-					<!-- Category 1 -->
-					<div id="basics" class="scroll-mt-24">
-						<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-							<span class="text-emerald-500">#</span> 基础概念与入门
-						</h2>
-						<div class="space-y-4">
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 机场、梯子、科学上网到底有什么区别？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>其实是一回事。早年间常用的翻墙软件（比如 V2Ray）图标是个小纸飞机，所以卖节点订阅的服务商就被圈内人俗称为“机场”。</p>
-									<p class="mt-2">而“梯子”是所有翻墙工具（包括 VPN、自建节点、机场）的统称。简单来说：买梯子，现在的最优解就是买个机场订阅。</p>
-								</div>
-							</details>
-
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 机场和传统 VPN 哪个好？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>绝对是机场。传统 VPN（像 Express、Nord）由于协议陈旧、目标太大，在国内基本处于“半残废”状态，晚高峰连上算你赢。</p>
-									<p class="mt-2">而机场使用最新协议（如 Shadowsocks、Vless、Reality），节点多、线路好，配合 Clash 等客户端还能实现“国内直连、国外代理”的智能分流，速度和体验远超传统 VPN。</p>
-								</div>
-							</details>
+					{faqData.map((category) => (
+						<div id={category.id} class="scroll-mt-24">
+							<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+								<span class="text-emerald-500">#</span> {category.title}
+							</h2>
+							<div class="space-y-4">
+								{category.questions.map((item) => (
+									<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
+										<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
+											<span>Q: {item.q}</span>
+											<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
+												<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+											</span>
+										</summary>
+										<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4" set:html={item.a}>
+										</div>
+									</details>
+								))}
+							</div>
 						</div>
-					</div>
-
-					<!-- Category 2 -->
-					<div id="speed" class="scroll-mt-24">
-						<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-							<span class="text-emerald-500">#</span> 线路与测速真相
-						</h2>
-						<div class="space-y-4">
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: IPLC、IEPL 和普通中转线路有什么区别？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>普通中转走的是跨境公网，一到晚上 8 点到 11 点的晚高峰，必然会遇到拥堵和丢包。</p>
-									<p class="mt-2">而 <strong>IPLC 和 IEPL 是物理内网专线</strong>，数据根本不经过防火长城（GFW），等同于两点一线的“局域网”。对于打游戏、看 4K 和需要极度稳定 AI 对话的用户，认准这俩词买就对了（例如我们榜单的闪跃机场就是纯正的 IPLC）。</p>
-								</div>
-							</details>
-
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 机场延迟低就一定代表速度快吗？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>这是小白最容易踩的坑！<strong>延迟（Ping）只代表响应速度，带宽才决定你的下载速度。</strong></p>
-									<p class="mt-2">很多野鸡机场用离你最近的节点把延迟做得非常漂亮（比如 30ms），但带宽被严重超售挤满，看个 1080P 视频照样疯狂转圈。老叶的建议是：看测速，一定要看“晚高峰真实测速”，延迟低且不丢包才是王道。</p>
-								</div>
-							</details>
-						</div>
-					</div>
-
-					<!-- Category 3 -->
-					<div id="unlock" class="scroll-mt-24">
-						<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-							<span class="text-emerald-500">#</span> 流媒体与 AI 解锁
-						</h2>
-						<div class="space-y-4">
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 什么叫“原生 IP”？为什么看 Netflix 必须用它？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>原生 IP 就是当地宽带运营商分配的本土 IP。Netflix、Disney+ 甚至 ChatGPT 为了防止滥用，会大规模封杀机房（数据中心）IP。</p>
-									<p class="mt-2">如果你用的机场节点不是原生 IP，轻则只能看 Netflix 自制剧，重则直接被 ChatGPT 封号。本站排行榜明确标注了“原生解锁”的机场，老叶亲自测试过，随便看。</p>
-								</div>
-							</details>
-
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 用 ChatGPT 和 Claude 老是被封号，机场怎么选？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>封号 90% 是因为你用的节点 IP 太脏（被万人骑），或者你的节点频繁变动触发了风控。</p>
-									<p class="mt-2">做 AI 绘画和跨境运营，必须选提供 <strong>静态原生 IP</strong> 或高品质冷门机房的节点，并且强烈建议在客户端里使用分流规则，把 `openai.com` 等域名固定走某一个日本或新加坡节点，绝对不要全局模式来回切换。</p>
-								</div>
-							</details>
-						</div>
-					</div>
-
-					<!-- Category 4 -->
-					<div id="scam" class="scroll-mt-24">
-						<h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-							<span class="text-emerald-500">#</span> 避坑与防跑路
-						</h2>
-						<div class="space-y-4">
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 月付、季付还是年付划算？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>记住老叶的铁律：<strong>新机场、第一次用的机场，永远只买月付！</strong></p>
-									<p class="mt-2">花几十块钱试水一个月，确认晚高峰不卡、不丢包，再考虑长期。只有那些开了两年以上、口碑过硬的老牌大厂（比如一翻云），你用着满意了，再去买年付吃折扣。上来就被“终身卡”忽悠的，往往是杀猪盘。</p>
-								</div>
-							</details>
-
-							<details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 open:ring-emerald-500 open:shadow-md transition-all">
-								<summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 outline-none hover:text-emerald-600 text-lg">
-									<span>Q: 便宜机场能不能买？低价的风险是什么？</span>
-									<span class="transition group-open:rotate-180 text-emerald-500 flex-shrink-0">
-										<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-									</span>
-								</summary>
-								<div class="mt-4 text-slate-600 text-base leading-relaxed border-t border-slate-100 pt-4">
-									<p>便宜本身没问题，但“违背常理的便宜”绝对有问题。</p>
-									<p class="mt-2">优质的 IPLC 专线带宽成本是极高的。如果一个机场号称全线 IPLC，10 块钱却能给你 500G 甚至 1000G 流量，那它要么是虚标线路（拿垃圾中转冒充），要么就是超售到了令人发指的地步（晚高峰疯狂断流），最坏的情况就是准备圈一波钱跑路。天下没有免费的午餐。</p>
-								</div>
-							</details>
-						</div>
-					</div>
+					))}
 
 				</div>
 
