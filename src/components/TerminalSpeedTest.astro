@@ -39,33 +39,48 @@ const renderCheck = (val: boolean | string) => {
 
 <div class={`bg-slate-900 rounded-xl overflow-hidden font-mono text-sm sm:text-base text-slate-300 shadow-2xl border border-slate-800 select-all ${className}`}>
 	<!-- Terminal Header -->
-	<div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700 select-none">
-		<div class="flex gap-1.5">
+	<div class="bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-700 select-none">
+		<div class="flex gap-2">
 			<div class="w-3 h-3 rounded-full bg-rose-500"></div>
 			<div class="w-3 h-3 rounded-full bg-amber-500"></div>
 			<div class="w-3 h-3 rounded-full bg-emerald-500"></div>
 		</div>
-		<div class="text-slate-400 text-xs ml-2 opacity-70">root@laoye-lab:~# speedtest-cli --target={node}</div>
+		<div class="text-slate-400 text-xs sm:text-sm ml-2 opacity-70">root@laoye-lab:~# speedtest-cli --target={node}</div>
 	</div>
 	
 	<!-- Terminal Body -->
-	<div class="p-4 sm:p-5 overflow-x-auto whitespace-pre leading-relaxed">
-<span class="text-emerald-400 font-bold">&gt; 正在获取底层网络协议栈日志... [OK]</span>
-<span class="text-slate-600">======================================================</span>
-<span class="text-sky-400 font-bold">[Date]</span> {date}
-<span class="text-sky-400 font-bold">[Env ]</span> {env}
-<span class="text-sky-400 font-bold">[Node]</span> {node}
-<span class="text-slate-600">------------------------------------------------------</span>
-PING   : <span class="text-amber-400">{ping.padEnd(8)}</span> | JITTER : <span class="text-amber-400">{jitter}</span>
-DL     : <span class="text-emerald-400 font-bold">{download.padEnd(8)}</span> | UL     : <span class="text-emerald-400 font-bold">{upload}</span>
-LOSS   : <span class="text-rose-400">{loss.padEnd(8)}</span> | TESTS  : 5 (Avg)
-<span class="text-slate-600">------------------------------------------------------</span>
-<span class="text-slate-400 font-bold">Streaming & AI Unlock Status:</span>
-YouTube 4K/8K : <span set:html={renderCheck(youtube)}></span>
-Netflix       : <span set:html={renderCheck(netflix)}></span>
-ChatGPT       : <span set:html={renderCheck(chatgpt)}></span>
-Disney+       : <span set:html={renderCheck(disney)}></span>
-<span class="text-slate-600">======================================================</span>
-<span class="text-emerald-400 font-bold animate-pulse">_</span>
+	<div class="p-5 sm:p-8 leading-relaxed">
+		<div class="text-emerald-400 font-bold mb-2">&gt; 正在获取底层网络协议栈日志... [OK]</div>
+		<div class="border-b border-dashed border-slate-700 my-4"></div>
+		
+		<div class="mb-4">
+			<div><span class="text-sky-400 font-bold inline-block w-16">[Date]</span> {date}</div>
+			<div><span class="text-sky-400 font-bold inline-block w-16">[Env ]</span> {env}</div>
+			<div><span class="text-sky-400 font-bold inline-block w-16">[Node]</span> {node}</div>
+		</div>
+		
+		<div class="border-b border-dashed border-slate-700 my-4"></div>
+		
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-4">
+			<div><span class="text-slate-400">PING   :</span> <span class="text-amber-400">{ping}</span></div>
+			<div><span class="text-slate-400">JITTER :</span> <span class="text-amber-400">{jitter}</span></div>
+			<div><span class="text-slate-400">DL     :</span> <span class="text-emerald-400 font-bold text-base sm:text-lg">{download}</span></div>
+			<div><span class="text-slate-400">UL     :</span> <span class="text-emerald-400 font-bold text-base sm:text-lg">{upload}</span></div>
+			<div><span class="text-slate-400">LOSS   :</span> <span class="text-rose-400">{loss}</span></div>
+			<div><span class="text-slate-400">TESTS  :</span> 5 (Avg)</div>
+		</div>
+		
+		<div class="border-b border-dashed border-slate-700 my-4"></div>
+		
+		<div class="text-slate-400 font-bold mb-3">Streaming & AI Unlock Status:</div>
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 mb-2">
+			<div><span class="text-slate-400">YouTube 4K/8K :</span> <span set:html={renderCheck(youtube)}></span></div>
+			<div><span class="text-slate-400">Netflix       :</span> <span set:html={renderCheck(netflix)}></span></div>
+			<div><span class="text-slate-400">ChatGPT       :</span> <span set:html={renderCheck(chatgpt)}></span></div>
+			<div><span class="text-slate-400">Disney+       :</span> <span set:html={renderCheck(disney)}></span></div>
+		</div>
+		
+		<div class="border-b border-dashed border-slate-700 my-4"></div>
+		<div class="text-emerald-400 font-bold animate-pulse text-lg">_</div>
 	</div>
 </div>
