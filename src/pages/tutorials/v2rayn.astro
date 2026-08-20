@@ -1,0 +1,132 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+
+const howToSchema = {
+	"@context": "https://schema.org",
+	"@type": "HowTo",
+	"name": "2026 最新：v2rayN 怎么用？(Windows 老牌翻墙神器教程)",
+	"description": "很多人觉得 Clash 太复杂，老叶手把手教你使用更轻量、更简单的 v2rayN 客户端。从下载防坑到机场订阅导入，三步搞定 Windows 电脑翻墙。",
+	"step": [
+		{
+			"@type": "HowToStep",
+			"name": "第一步：选个好机场，拿到订阅链接",
+			"text": "不要白嫖没保障的免费节点，先准备一个支持 V2Ray/SSR 协议的专线机场，在后台一键复制订阅链接。"
+		},
+		{
+			"@type": "HowToStep",
+			"name": "第二步：避开假官网，去 GitHub 下载真 v2rayN",
+			"text": "绝对不要用百度搜索下载。请前往官方 GitHub 仓库的 Releases 页面，下载包含内核的 v2rayN-Core.zip 压缩包，解压到非系统盘。"
+		},
+		{
+			"@type": "HowToStep",
+			"name": "第三步：导入订阅并设为系统代理",
+			"text": "打开 v2rayN.exe，点击顶部菜单的“订阅”->“订阅设置”粘贴链接并更新。然后在右下角托盘图标右键，勾选“自动配置系统代理”（图标变红）即可上网。"
+		}
+	]
+};
+---
+
+<Layout 
+	title="2026 最新 v2rayN 怎么用？老叶手把手教你下载与机场订阅导入"
+	description="觉得 Clash 太复杂？老叶教你用 Windows 老牌翻墙神器 v2rayN！防木马下载指南、机场订阅一键导入，专治各种连不上和速度慢。"
+	keywords="v2rayN下载, v2rayN怎么用, v2rayN订阅导入, Windows翻墙软件, v2rayN官网, v2ray教程"
+	customSchema={howToSchema}
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/tutorials" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回教程中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">Windows 经典轻量级客户端</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					2026 最新：v2rayN 怎么用？<br/>
+					<span class="text-xl text-emerald-600 font-bold mt-2 block">—— 老牌稳如老狗的 Windows 翻墙神器下载与导入教程</span>
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span class="font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full">✍️ 老叶手把手教学</span>
+					<span>📅 2026年最新实测有效</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<h2>开篇扫盲：为什么不用 Clash，非得用 v2rayN？</h2>
+				<p>经常有粉丝在后台私信老叶：“老叶，你天天吹 Clash 牛逼，但我只是想看个网页，Clash 里那一堆分流规则、内核设置看得我头都大了，有没有那种<strong>点一下就能连</strong>的傻瓜软件？”</p>
+				<p>如果你也是不想折腾的“极简主义者”，或者是电脑配置不高的老爷机用户，那么 <strong>v2rayN</strong> 绝对是你的最终归宿。它不仅老牌、极其稳定，而且占用内存极小。今天老叶就带你三步搞定它！</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第一步：好马配好鞍，先搞定机场订阅链接</h2>
+				<p>别急着下软件。v2rayN 只是个“壳”，里面没油是跑不起来的。如果你还在到处找那些随时失效、慢得像乌龟的免费节点，那我劝你趁早放弃，一到晚上全员红屏超时。</p>
+				
+				<div class="bg-amber-50 border-l-4 border-amber-500 p-5 my-6">
+					<h4 class="text-amber-800 font-bold mt-0 mb-2">避坑指南：给 v2rayN 加满优质“汽油”</h4>
+					<p class="text-amber-900 text-sm mb-0">不用去百度上试错了，老叶自费实测了几十家，目前用下来最稳、晚高峰看 4K 不卡顿的 IPLC/IEPL 专线机场都在下面了。<strong>随便买个月付套餐（几十块钱），在后台找到“复制 V2Ray 订阅链接”或“复制通用订阅”，咱们再进行第二步。</strong></p>
+				</div>
+
+				<AffiliateCTA />
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第二步：如何下载真正的 v2rayN（防木马警告）</h2>
+				<p><strong>🚨 老叶红色警告：</strong> 绝对不要去百度搜“v2rayN 下载”！排在前面的几乎全是国内流氓搞的假官网，下载下来不仅有弹窗广告，还可能带有盗号木马！</p>
+				
+				<p>真正的官方唯一发布地址在 GitHub。请跟着老叶这样做：</p>
+				<ol>
+					<li>打开 GitHub 官网，搜索 <code>v2rayN</code>，找到原作者 <code>2dust</code> 的仓库。</li>
+					<li>点击右侧的 <strong>Releases</strong>（发行版）。</li>
+					<li><strong>重点来了，千万别下错包！</strong> 列表里有很多文件，一定要找 <code>v2rayN-Core.zip</code>（注意是带 Core 的）。如果你下载了不带 Core 的，还得自己去配内核文件，能把小白逼疯。</li>
+				</ol>
+
+				<div class="bg-slate-100 rounded-xl p-5 my-6 border border-slate-200">
+					<h4 class="text-slate-800 font-bold mt-0 mb-2">💡 知识扫盲：安装失败怎么办？</h4>
+					<p class="text-slate-600 text-sm mb-0">由于 v2rayN 是用 C# 写的，如果你打开软件报错，说明你的电脑缺少微软的运行库。根据提示下载并安装对应的 <code>.NET Desktop Runtime</code> 即可完美解决。</p>
+				</div>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第三步：极简配置，三步起飞</h2>
+				<p>把下载好的压缩包解压到一个你找得到的地方（建议别放 C 盘），双击里面的蓝底白 V 图标 <code>v2rayN.exe</code>。</p>
+				
+				<h3>1. 导入机场链接</h3>
+				<p>点击软件最上方的菜单 <strong>“订阅”</strong> -> <strong>“订阅设置”</strong>。<br/>
+				点击 <strong>“添加”</strong>，在“备注”里随便填个名字（比如：闪跃机场），在“地址”栏里<strong>粘贴你第一步复制的订阅链接</strong>，然后点确定。<br/>
+				回到主界面，点击菜单 <strong>“订阅”</strong> -> <strong>“更新订阅 (不通过代理)”</strong>。此时软件中间就会刷刷刷出现几十个节点。</p>
+
+				<h3>2. 选择节点并测速</h3>
+				<p>随便点选一个节点（比如香港或日本），按快捷键 <code>Ctrl+E</code>，或者右键点击“测试服务器真连接延迟”。如果出现数字，说明节点活得好好的。</p>
+
+				<h3>3. 拉下电闸：开启系统代理</h3>
+				<p>这是最后一步，也是小白最容易忘的一步！<br/>
+				在电脑右下角的任务栏托盘里，找到 v2rayN 的蓝色图标，<strong>鼠标右键点击它</strong>，找到 <strong>“系统代理”</strong>，选择 <strong>“自动配置系统代理”</strong>。<br/>
+				这个时候你会发现，<strong>蓝色的小图标变成了红色！</strong> 恭喜你，电闸已合上，打开浏览器，畅游国际互联网吧！</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>老叶独家排错指南：明明变红了还是连不上？</h2>
+				<p>如果你全按老叶说的做了，但油管还是打不开，检查以下三点，能解决 99% 的玄学问题：</p>
+				<ol>
+					<li><strong>电脑时间不对：</strong> V2Ray 协议对时间极其敏感，如果你的电脑时间跟北京时间相差超过 2 分钟，那是绝对连不上的。去系统设置里点一下“自动同步时间”。</li>
+					<li><strong>路由模式选错了：</strong> 右下角托盘图标右键 -> <strong>路由</strong>，请确保选的是 <strong>“绕过局域网及大陆地址”</strong>（这就是我们常说的 PAC 模式，国内网站直连，国外走代理）。</li>
+					<li><strong>浏览器装了毒瘤插件：</strong> 如果你的电脑装了各种流氓卫士、垃圾杀毒，或者浏览器装了什么抢票插件，有可能会强行接管你的系统代理。建议关闭后重启试试。</li>
+				</ol>
+				
+				<div class="bg-emerald-50 rounded-2xl p-6 mt-10 text-center border border-emerald-100">
+					<h3 class="text-xl font-bold text-emerald-900 mt-0 mb-3">🎉 搞定收工！</h3>
+					<p class="text-sm text-emerald-700 mb-0">
+						如果你受够了复杂软件的折磨，v2rayN 绝对是返璞归真的终极选择。<br/>
+						配合老叶推荐的高速机场，晚高峰 4K 视频照样丝滑秒开！
+					</p>
+				</div>
+				
+			</article>
+		</section>
+	</main>
+</Layout>

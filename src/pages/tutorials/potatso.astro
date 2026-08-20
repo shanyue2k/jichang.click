@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+
+const howToSchema = {
+	"@context": "https://schema.org",
+	"@type": "HowTo",
+	"name": "2026 最新：苹果手机没钱买小火箭？Potatso 免费下载与配置指南",
+	"description": "买不起 Shadowrocket 怎么办？老叶手把手教你零成本使用 iOS 免费翻墙神器 Potatso (土豆丝)，无需复杂的外区支付，极简导入节点起飞。",
+	"step": [
+		{
+			"@type": "HowToStep",
+			"name": "第一步：准备好你的机场节点",
+			"text": "免费软件只是工具，你需要买一个稳定的专线机场。老叶推荐使用跨界云等性价比极高的入门机场，并获取 SSR/V2ray 订阅链接。"
+		},
+		{
+			"@type": "HowToStep",
+			"name": "第二步：利用共享外区账号下载 Potatso",
+			"text": "虽然 Potatso 免费，但国区依然搜不到。使用机场后台提供的免费“共享美区 Apple ID”登录 App Store，搜索 Potatso 并下载。"
+		},
+		{
+			"@type": "HowToStep",
+			"name": "第三步：一键导入节点开启 VPN",
+			"text": "打开 Potatso，点击右上角加号添加订阅，粘贴你的机场链接。返回主界面选择一个节点，点击右下角的播放按钮，同意建立 VPN 即可。"
+		}
+	]
+};
+---
+
+<Layout 
+	title="苹果手机没钱买小火箭？2026 最新 iOS 免费翻墙神器 Potatso 下载与配置指南"
+	description="买不到 Shadowrocket 小火箭怎么办？老叶教你用苹果 iOS 完全免费的平替神器 Potatso（土豆丝）。零成本搞定美区下载，傻瓜式导入机场订阅教程。"
+	keywords="Potatso下载, 苹果免费翻墙软件, 小火箭平替, iOS怎么用机场, Potatso配置, 苹果手机翻墙"
+	customSchema={howToSchema}
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/tutorials" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回教程中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">iOS 苹果端零成本翻墙</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					没美区账号买不了小火箭？<br/>
+					<span class="text-xl text-emerald-600 font-bold mt-2 block">—— 2026 苹果 iOS 免费神器 Potatso (土豆丝) 极简教程</span>
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span class="font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full">✍️ 老叶手把手教学</span>
+					<span>📅 2026年最新实测有效</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<h2>开篇直击痛点：为什么选 Potatso？</h2>
+				<p>老叶在后台经常遇到这样的求救：“老叶，我想在 iPhone 上翻墙，你让我买小火箭 (Shadowrocket)。但我去淘宝搜了一圈，黑心商家卖我 30 块钱一个账号！我自己又没有美国信用卡，搞不定美区 Apple ID，难道苹果手机就没法出海了吗？”</p>
+				<p>当然有救！如果你的预算极度吃紧，不想在软件上花那 2.99 美金，或者实在搞不定复杂的美区支付，今天老叶就交给你一个**完全免费**的“零成本”平替神器——<strong>Potatso（土豆丝）</strong>。</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第一步：买好“汽油”才能开车</h2>
+				<p>很多小白有个误区，以为下载个翻墙软件就能直接上外网了。<strong>大错特错！</strong> Potatso 只是个“空车壳”，你要想上路，得先去买“汽油”（也就是机场节点）。</p>
+				<p>既然你在软件上省了钱，那在节点上就别抠门去找垃圾免费节点了，否则一分钟断线三次，能把人搞崩溃。</p>
+				
+				<div class="bg-amber-50 border-l-4 border-amber-500 p-5 my-6">
+					<h4 class="text-amber-800 font-bold mt-0 mb-2">避坑指南：适合新手的性价比专线机场</h4>
+					<p class="text-amber-900 text-sm mb-0">这里老叶推荐几家门槛极低、一顿外卖钱就能稳定用一个月的 IPLC/IEPL 入门级专线机场。买好之后，在机场的后台仪表盘里，找到 <strong>“复制 SSR / V2Ray 订阅链接”</strong>（注意，Potatso 不支持某些太新的协议，所以选通用的 V2ray 或 SSR 订阅最稳妥）。</p>
+				</div>
+
+				<AffiliateCTA />
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第二步：外区账号极简获取与下载</h2>
+				<p>虽然 Potatso 是完全免费的，但因为它属于 VPN 类应用，所以在<strong>国区 App Store 里依然是搜不到的</strong>，你必须用非大陆区（比如美区、港区）的 Apple ID 去下载。</p>
+				
+				<div class="bg-slate-100 rounded-xl p-5 my-6 border border-slate-200">
+					<h4 class="text-slate-800 font-bold mt-0 mb-2">💡 知识扫盲：怎么白嫖外区 Apple ID？</h4>
+					<p class="text-slate-600 text-sm mb-0">99% 的机场（比如上面老叶推荐的那些），在他们的使用教程里，都会给付费用户提供一组<strong>免费的共享外区 Apple ID</strong>。你只需要把你的 App Store 退出来，登录他们提供的账号密码即可。因为 Potatso 本身就是免费软件，所以不需要你绑定信用卡，直接就能下载！</p>
+				</div>
+
+				<p><strong>🚨 老叶红色警告（必看）：</strong><br/>
+				登录共享账号时，<strong>千万千万只能在 App Store 里面登录！绝对不要在手机的“设置” (iCloud) 里面登录！</strong> 如果在 iCloud 里登了共享账号，一旦账号被封锁，你的手机立马变成砖头，神仙难救！</p>
+				
+				<p>安全登录 App Store 后，搜索 <code>Potatso</code>，认准那个像土豆切片一样的图标，点击 <code>GET</code> 下载安装。下载完后，立刻把那个共享账号退出，登回你自己的国区账号。绝对安全，不留后患。</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>第三步：极简导入节点，一键起飞</h2>
+				<p>打开你刚下好的 Potatso，接下来就是傻瓜式的操作：</p>
+				
+				<ol>
+					<li>点击软件右上角的 <strong>加号 (＋)</strong>，选择 <strong>“添加订阅” (Add Subscription)</strong>。</li>
+					<li>在“名称”里随便填个名字（比如：跨界云），在“URI”那一栏里，**粘贴你第一步在机场后台复制的订阅链接**。</li>
+					<li>点击右上角的 <strong>“完成” (Done)</strong>，此时软件会自动去拉取节点，稍微等几秒钟。</li>
+					<li>回到软件主界面，你会看到下面出现了一长串节点列表。随便点击选中一个你想连的国家（比如香港），被选中的节点左侧会出现一个小勾。</li>
+					<li>最后一步！看到右下角那个**巨大的蓝色“播放”按钮**了吗？点它！第一次点的时候，苹果系统会弹出一个对话框问你 <code>“Potatso Would Like to Add VPN Configurations”</code>，点 <strong>“Allow” (允许)</strong>，然后输入你的手机锁屏密码。</li>
+				</ol>
+
+				<p>等到手机右上角出现了一个小小的 <code>VPN</code> 图标，恭喜你，你已经彻底搞定了！打开 YouTube 尽情冲浪吧！</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>老叶客观点评：要不要换小火箭？</h2>
+				<p>很多小白连上之后会问：老叶，既然 Potatso 这么香，那我以后是不是永远都不用买小火箭了？</p>
+				<p>老叶说句实在话：<strong>如果你只用手机偶尔看看网页、刷刷推特，Potatso 完全够用了。</strong></p>
+				<p>但如果你是一个对网络要求比较高的重度用户，老叶还是建议你最终要升级到 Shadowrocket。为什么？因为 Potatso 作为一个长期没大更新的免费软件，它的“分流规则”比较死板。有时候会出现开着它，国内的微信、抖音打不开，或者加载很慢的情况。而小火箭的分流做得极其完美，能做到国内外流量互不干扰。</p>
+				
+				<div class="bg-emerald-50 rounded-2xl p-6 mt-10 text-center border border-emerald-100">
+					<h3 class="text-xl font-bold text-emerald-900 mt-0 mb-3">🎉 搞定收工！</h3>
+					<p class="text-sm text-emerald-700 mb-0">
+						能省一分是一分，对于刚接触翻墙的新手来说，用 Potatso 配合老叶推荐的高速机场作为“入门第一课”，简直是完美的零成本过渡方案！
+					</p>
+				</div>
+				
+			</article>
+		</section>
+	</main>
+</Layout>
