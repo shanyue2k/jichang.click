@@ -1,0 +1,95 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "v2rayN",
+	"operatingSystem": "Windows",
+	"applicationCategory": "UtilitiesApplication",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "CNY"
+	}
+};
+---
+
+<Layout 
+	title="v2rayN 官方纯净版免费下载 (2026 最新) - Windows 防木马指北"
+	description="拒绝百度搜索流氓弹窗！老叶为您提供 v2rayN 官方 GitHub 原版的安全下载链接，包含 Core 内核。老牌稳定极简代理客户端。"
+	keywords="v2rayN下载, v2rayN官方下载, Windows翻墙客户端, v2ray最新版"
+	customSchema={softwareSchema}
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/downloads" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回下载中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">Windows 端</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					v2rayN 官方正版下载 (含内核)
+				</h1>
+				<div class="mt-4 flex flex-wrap items-center gap-2 text-sm">
+					<span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-bold">老牌极简神器</span>
+					<span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">安全级别: 极高 (开源)</span>
+					<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">支持 Windows 10/11</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<div class="bg-rose-50 border-l-4 border-rose-500 p-6 my-6 rounded-r-xl">
+					<h3 class="text-rose-900 font-bold mt-0 flex items-center gap-2">
+						<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+						请停止使用百度搜索下载代理软件！
+					</h3>
+					<p class="text-rose-800 text-base mb-0">
+						目前在百度搜“v2rayN下载”，排在前 5 页的所谓“中文官网”全部是假的！这些流氓网站会在原本只有 50MB 的安装包里塞入多达 200MB 的静默安装广告、锁定主页的流氓卫士，甚至直接植入键盘记录器。<br/><br/>
+						<strong>v2rayN 是一个免费开源的软件，它的唯一官方发布渠道只有 GitHub！</strong>
+					</p>
+				</div>
+
+				<h2>官方纯净版安全下载通道</h2>
+				<p>为了防止小白在 GitHub 看不懂密密麻麻的英文，老叶在这里直接贴出原作者 <code>2dust</code> 的官方原版下载直链。点击下方按钮即可通过 GitHub 官方服务器下载：</p>
+
+				<div class="flex flex-col sm:flex-row gap-4 my-8">
+					<a href="https://github.com/2dust/v2rayN/releases/latest/download/v2rayN-Core.zip" target="_blank" rel="nofollow" class="flex-1 text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-all hover:-translate-y-1 shadow-lg shadow-emerald-600/30 no-underline">
+						<span class="block text-lg">下载包含内核版 (.zip)</span>
+						<span class="block text-xs font-normal opacity-90 mt-1">⭐ 老叶强烈推荐：解压即用</span>
+					</a>
+					<a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="nofollow" class="flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-4 px-6 rounded-xl transition-all no-underline border border-slate-300">
+						<span class="block text-lg">前往官方 GitHub 发布页</span>
+						<span class="block text-xs font-normal opacity-80 mt-1">懂代码的老鸟点这里</span>
+					</a>
+				</div>
+
+				<p class="text-sm text-slate-500 bg-slate-100 p-3 rounded-lg border border-slate-200">
+					注：如果下载后运行报错，请安装微软官方运行库 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0" target="_blank" rel="nofollow" class="text-emerald-600">.NET Desktop Runtime</a>。
+				</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>光有软件上不了网？老叶精选的高速专线推荐</h2>
+				<p>v2rayN 下好了，但为什么没网？因为这只是个“空的跑车”，你还得给它加“高端汽油”（机场节点）。如果随便找免费节点贴进去，不仅满屏超时红字，还可能泄露隐私。</p>
+				<p>下面这几家是老叶亲自测过、且完美支持 v2rayN 导入的 IPLC/IEPL 顶级专线机场，买个月付套餐就能直接起飞：</p>
+
+				<div class="bg-amber-50 p-5 rounded-xl border border-amber-200 my-6">
+					<AffiliateCTA />
+				</div>
+
+				<h2>小白傻瓜式导入教程</h2>
+				<p>不知道怎么把上面买的机场链接塞进 v2rayN 里？不知道怎么把右下角那个蓝色 V 图标变成红色？</p>
+				<p>👉 <a href="/tutorials/v2rayn" class="font-bold text-emerald-600 underline">点击查看老叶专为你写的：v2rayN 三步配置傻瓜教程</a></p>
+
+			</article>
+		</section>
+	</main>
+</Layout>

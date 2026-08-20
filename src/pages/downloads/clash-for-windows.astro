@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+
+const softwareSchema = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "Clash for Windows",
+	"operatingSystem": "Windows",
+	"applicationCategory": "UtilitiesApplication",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "CNY"
+	}
+};
+---
+
+<Layout 
+	title="Clash for Windows 最新官方下载 (2026 更新) - 汉化绿色版"
+	description="全网首发！提供 Clash for Windows 0.20.39 最终官方原版安全下载，并强烈建议过渡到最新的替代版 Clash Verge。附带高速机场节点推荐。"
+	keywords="Clash for Windows下载, Clash下载, CFW最新版, Clash汉化版"
+	customSchema={softwareSchema}
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/downloads" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回下载中心</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">Windows 端</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					Clash for Windows 官方最新版下载
+				</h1>
+				<div class="mt-4 flex flex-wrap items-center gap-2 text-sm">
+					<span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-medium">版本: v0.20.39 (最终版)</span>
+					<span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full font-bold">作者已停更</span>
+					<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-medium">支持 Windows 10/11</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<div class="bg-rose-50 border-l-4 border-rose-500 p-6 my-6 rounded-r-xl">
+					<h3 class="text-rose-900 font-bold mt-0 flex items-center gap-2">
+						<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+						老叶极其重要的防坑警告
+					</h3>
+					<p class="text-rose-800 text-base mb-0">
+						1. <strong>原作者已删库跑路</strong>：Clash for Windows (那只蓝色猫咪图标) 的开发者早在 2023 年底就删除了 GitHub 仓库。<br/>
+						2. <strong>警惕国内假官网</strong>：目前百度上搜到的所有 <code>clashforwindows.net</code> 之类的中文官网，<strong>100% 都是国人搞的假冒网站！</strong> 他们在安装包里植入了挖矿木马和弹窗广告，千万别下！<br/>
+						3. <strong>强烈建议换代</strong>：老版 CFW 不支持最新的防封锁协议（如 Vless/Reality），经常报错连不上。老叶强烈推荐您直接下载它的最新替代品：<a href="/tutorials/clash" class="font-bold text-rose-900 underline">Clash Verge (点击查看教程)</a>。
+					</p>
+				</div>
+
+				<h2>官方原版备份下载 (历史留档)</h2>
+				<p>如果您因为某些特殊原因（比如老系统兼容性）非要使用这只“老猫咪”，老叶在这里为您提供当时原作者删库前的<strong>最终原版备份</strong>（纯净无毒，但无后续更新）：</p>
+
+				<div class="flex flex-col sm:flex-row gap-4 my-8">
+					<a href="https://github.com/Kuingsmile/clash-for-windows-archive/releases/download/0.20.39/Clash.for.Windows.Setup.0.20.39.exe" target="_blank" rel="nofollow" class="flex-1 text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 rounded-xl transition-all hover:-translate-y-1 shadow-lg shadow-indigo-600/30 no-underline">
+						<span class="block text-lg">下载 64位安装包 (.exe)</span>
+						<span class="block text-xs font-normal opacity-80 mt-1">适合 99% 的普通电脑</span>
+					</a>
+					<a href="https://github.com/Kuingsmile/clash-for-windows-archive/releases/download/0.20.39/Clash.for.Windows-0.20.39-win.7z" target="_blank" rel="nofollow" class="flex-1 text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-4 px-6 rounded-xl transition-all no-underline border border-slate-300">
+						<span class="block text-lg">下载绿色解压版 (.7z)</span>
+						<span class="block text-xs font-normal opacity-80 mt-1">免安装，解压即用</span>
+					</a>
+				</div>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>有了软件，没有节点怎么办？</h2>
+				<p>Clash 只是一个代理外壳，里面不内置任何服务器。要想翻墙看 YouTube 4K，你必须购买优质的“机场”订阅链接。</p>
+				<p><strong>老版 Clash 的致命弱点：</strong> 很多便宜的机场已经放弃了老版协议，导致你把链接贴进 CFW 后会疯狂报错 <code>unsupported proxy type</code>。因此，你必须购买兼容性极高、线路极其稳定的高端专线机场。</p>
+
+				<div class="bg-amber-50 p-5 rounded-xl border border-amber-200 my-6">
+					<h4 class="text-amber-800 font-bold mt-0 mb-3 text-center">👇 老叶严选：完美适配 Clash 的 IPLC/IEPL 专线机场 👇</h4>
+					<AffiliateCTA />
+				</div>
+
+				<h2>常见问题 (FAQ)</h2>
+				<h4>1. 安装后为什么是英文的？有汉化版吗？</h4>
+				<p>官方原版就是纯英文的。网上所谓的“一键汉化补丁”很多都带有后门。如果您英文不好，老叶再次恳求您去用 <strong>Clash Verge</strong>，它不仅内核新，而且原生自带完美中文界面！</p>
+				
+				<h4>2. 为什么右下角图标一直是灰色的？</h4>
+				<p>这说明您没有开启“系统代理 (System Proxy)”。在软件主界面，点开左侧的 <code>General</code>，将 <code>System Proxy</code> 后面的开关打开，图标就会变色，此时即可上网。</p>
+
+			</article>
+		</section>
+	</main>
+</Layout>
