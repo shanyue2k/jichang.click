@@ -78,23 +78,15 @@ const schema = customSchema || {
 					<!-- 桌面端菜单 -->
 					<nav class="hidden md:flex flex-1 items-center justify-center gap-8">
 						<a href="/" class="text-sm font-bold text-emerald-600">🏠 首页</a>
-						<a href="/#top-1" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">💎 专线精选</a>
-						<a href="/tutorials" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
-							📖 客户端教程
-						</a>
 						<a href="/downloads" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
-							⬇️ 软件下载
+							📦 软件与教程
 						</a>
 						<a href="/reviews" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
 							🔍 深度评测
 						</a>
 						<a href="/guides" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
-							💡 刚需指南
+							💡 疑难与指南
 						</a>
-						<a href="/netflix-streaming" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
-							🍿 流媒体解锁
-						</a>
-						<a href="/faq" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">❓ 问题库</a>
 						<a href="/about" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">
 							ℹ️ 关于
 						</a>
@@ -109,13 +101,9 @@ const schema = customSchema || {
 
 					<!-- 移动端轻量菜单 -->
 					<div class="flex md:hidden flex-1 items-center justify-end gap-2 pl-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-						<a href="/#top-1" class="whitespace-nowrap rounded-full bg-emerald-50 px-3 py-1.5 text-xs font-bold text-emerald-700 border border-emerald-100">榜单</a>
-						<a href="/tutorials" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">教程</a>
-						<a href="/netflix-streaming" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">流媒体</a>
-						<a href="/guides" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">指南</a>
-						<a href="/downloads" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">下载</a>
+						<a href="/downloads" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">软件教程</a>
 						<a href="/reviews" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">评测</a>
-						<a href="/faq" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">问题库</a>
+						<a href="/guides" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">指南</a>
 						<a href="/about" class="whitespace-nowrap rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-500 border border-slate-200">关于</a>
 					</div>
 
