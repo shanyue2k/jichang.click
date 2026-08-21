@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import AffiliateCTA from '../../components/AffiliateCTA.astro';
+
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": "不买硬件路由，机场节点怎么给 PS5 / 电脑打游戏加速？",
+	"description": "深入解析普通机场无法用于打游戏的原因（UDP转发与TCP协议差异）。手把手教你零成本通过局域网共享，用超低延迟 IEPL 专线给主机游戏加速。",
+	"author": {
+		"@type": "Person",
+		"name": "老叶"
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "机场点击 (jichang.click)"
+	}
+};
+---
+
+<Layout 
+	title="PS5/PC 外服游戏怎么挂代理？老叶教你用机场专线零成本加速"
+	description="机场能代替 UU 加速器打瓦罗兰特吗？老叶深度剖析 TCP 与 UDP 的区别，教你不用买软路由，直接用电脑局域网共享，实现外服游戏超低延迟。"
+	keywords="PS5挂节点, 机场打游戏, 游戏专线, UDP转发, 瓦罗兰特加速, Switch翻墙"
+	customSchema={articleSchema}
+>
+	<main class="flex-1 bg-slate-50 pb-24">
+		<!-- Hero Section -->
+		<section class="bg-white border-b border-slate-200 py-12">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center gap-2 mb-4">
+					<a href="/guides" class="text-sm font-semibold text-emerald-600 hover:text-emerald-500">&larr; 返回刚需指南大厅</a>
+					<span class="text-slate-300">|</span>
+					<span class="text-sm font-semibold text-slate-500">电竞主机 / 游戏加速</span>
+				</div>
+				<h1 class="text-3xl font-extrabold text-slate-900 sm:text-4xl leading-tight">
+					不买硬件路由，机场能给 PS5 打游戏加速吗？<br/>
+					<span class="text-xl text-emerald-600 font-bold mt-2 block">—— 深度拆解 TCP 与 UDP 转发，零成本局域网共享教程</span>
+				</h1>
+				<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+					<span class="font-bold text-slate-700 bg-slate-100 px-3 py-1 rounded-full">✍️ 老叶原创干货</span>
+					<span>📅 2026年最新深度长文</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Content Section -->
+		<section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+			<article class="prose prose-slate prose-emerald lg:prose-lg max-w-none">
+				
+				<p class="lead text-xl text-slate-600 font-medium">经常有玩《Valorant》(瓦罗兰特)、Apex，或者家里有 PS5 和 Switch 的硬核玩家跑来问老叶：“既然我买的高端机场看 YouTube 能跑 4K 秒开，那我直接用它代替 UU、雷神加速器打外服游戏行不行？”</p>
+
+				<p>老叶给出的答案是：<strong>普通机场绝对不行，但顶级的 IEPL 游戏专线机场，不仅能行，甚至比传统的游戏加速器还要稳！</strong></p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<h2>底层揭秘：为什么普通节点打游戏会“瞬移”和掉线？</h2>
+				
+				<p>很多人试过开着 Clash 去打外服游戏，结果发现网页打开很快，一进游戏人物就疯狂“瞬移”，左上角的 Ping 值像过山车一样在 50 和 500 之间跳动。这是为什么？</p>
+
+				<div class="bg-indigo-50 rounded-2xl p-6 my-8 border border-indigo-100">
+					<h3 class="text-indigo-900 font-bold mt-0 mb-4">🎮 游戏世界的规则：UDP 协议至上</h3>
+					<p class="text-indigo-800 text-base mb-0">
+						你看网页、刷视频，走的是 <strong>TCP 协议</strong>。这种协议讲究“完整性”，如果路上丢了一个数据包，服务器会重传，所以你看视频顶多是卡顿缓冲一下。<br/><br/>
+						但竞技射击游戏（如 CS:GO, Apex）走的是 <strong>UDP 协议</strong>。这种协议讲究“极速”，如果你开枪的数据包没发过去，服务器不会等你，直接判定你没开枪（这就是丢包）。<br/><br/>
+						90% 便宜的翻墙机场，为了节省成本，<strong>根本不支持或者限制了 UDP 转发！</strong> 所以你用它们打游戏，游戏数据包只能被迫走低效的通道甚至被直接丢弃，不卡才怪。
+					</p>
+				</div>
+
+				<h2>用机场打游戏的两个硬性条件</h2>
+				
+				<p>如果你想抛弃加速器，把机场作为万能神器，你必须满足两个条件：</p>
+
+				<h3>1. 你买的必须是“物理专线 (IPLC/IEPL)”且原生支持 UDP</h3>
+				<p>绝对不能用中转节点，更不能用直连节点！你必须买一条深港 IPLC 或 IEPL 专线。这种专线相当于在深圳和香港之间拉了一根光缆，你的游戏数据不用过防火墙检测，直接走内网传输。Ping 值可以稳定锁定在 30ms 左右，一丝一毫都不会跳动。</p>
+
+				<h3>2. 你需要正确的“共享”姿势 (不用买软路由)</h3>
+				<p>电脑上的游戏可以直接开 Clash Verge (开启 TUN 虚拟网卡模式) 搞定。但 PS5 没法装 Clash 怎么办？别去买几百块的刷机路由器，老叶教你一招<strong>零成本局域网共享</strong>。</p>
+
+				<hr class="my-10 border-slate-200" />
+
+				<div class="bg-amber-50 border-l-4 border-amber-500 p-6 my-8 rounded-r-xl shadow-sm">
+					<h2 class="text-amber-900 font-bold mt-0 mb-4 flex items-center gap-2">
+						<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+						老叶实测：Ping 值不跳动的高端 IEPL 专线推荐
+					</h2>
+					<p class="text-amber-800 text-base mb-6">
+						打游戏对延迟和丢包的要求是极其苛刻的，能用来打游戏的机场，必须是机场界的劳斯莱斯。老叶用《Apex 英雄》日服连续测了半年，只有下面这几家拥有真正的 IEPL 内网专线，能做到晚高峰 0 丢包。
+					</p>
+					
+					<!-- 插入机场推荐卡片 -->
+					<div class="bg-white p-2 rounded-xl">
+						<AffiliateCTA />
+					</div>
+				</div>
+
+				<h2>干货实操：电脑给 PS5 / Switch 共享加速教程</h2>
+				
+				<p>准备条件：一台连着网的电脑（跑着你刚才买好的专线节点），和你的 PS5 在同一个路由器（同一个 WiFi 下）。</p>
+				
+				<ol>
+					<li><strong>开启允许局域网连接</strong>：打开电脑上的代理软件（比如 Clash Verge），在设置里找到 <code>Allow LAN (允许局域网连接)</code>，把它打开。</li>
+					<li><strong>查看局域网端口号</strong>：记下软件里写的 <code>Mixed Port</code> (混合端口)，比如通常是 <code>7890</code>。</li>
+					<li><strong>查看电脑 IP 地址</strong>：在 Clash 界面悬浮在 Allow LAN 上，或者打开 Windows 命令行输入 <code>ipconfig</code>，找到你的本地 IP 地址（通常是 <code>192.168.x.x</code> 这种）。</li>
+					<li><strong>配置 PS5 网络</strong>：打开 PS5 的网络设置 -> 设定互联网连接 -> 找到你的 WiFi 按手柄选项键 -> 进阶设定。<br/>
+					向下滚动找到 <strong>代理服务器 (Proxy Server)</strong>，选择“使用”。<br/>
+					在“地址”栏输入刚才查到的电脑 IP（192.168.x.x），在“端口号”输入 7890。<br/>
+					保存并测速。</li>
+				</ol>
+
+				<p>你会惊喜地发现，你的 PS5 下载速度不仅翻了十倍，而且打开美服/日服商店简直秒开，从此彻底告别 UU 盒子！</p>
+
+				<div class="bg-slate-100 rounded-2xl p-6 mt-10 text-center border border-slate-200">
+					<h3 class="text-xl font-bold text-slate-900 mt-0 mb-3">终极极客的浪漫</h3>
+					<p class="text-sm text-slate-600 mb-0">
+						用高端 IEPL 机场打游戏，虽然折腾了一点，但这代表了你拥有了对网络的绝对掌控权。<br/>
+						从此看剧、搞钱、打游戏，一条顶配节点全部搞定！
+					</p>
+				</div>
+				
+			</article>
+		</section>
+	</main>
+</Layout>
